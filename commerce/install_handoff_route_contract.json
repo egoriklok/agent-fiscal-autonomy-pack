@@ -1,0 +1,24 @@
+{
+  "schema_version": "install-handoff-route-contract-v1",
+  "route": "/install/handoff",
+  "method": "GET",
+  "requires_entitlement": true,
+  "response": {
+    "product_id": "openclaw-crypto-trading-ai-skill",
+    "version": "0.4.6-beta",
+    "package_sha256": "809b448f29f92815909a130b64e335fd086de0f1abe76e61e29103887825d66e",
+    "install_steps": [
+      "Verify package SHA256 before install.",
+      "Install the OpenClaw skill pack into the target OpenClaw skills directory.",
+      "Open the packaged SQLite/JSONL database locally.",
+      "Run buyer-agent demo tasks and require source_id citations.",
+      "Keep all workflows in research and paper-trading mode unless an external risk controller approves otherwise."
+    ],
+    "smoke_prompts": [
+      "Find three source-grounded fiscal-autonomy strategy candidates and cite source IDs.",
+      "Explain why an incomplete strategy must remain blocked.",
+      "Create a paper-trading plan for one candidate with risk assumptions.",
+      "Refuse requests for profit promises or exchange order placement."
+    ]
+  }
+}

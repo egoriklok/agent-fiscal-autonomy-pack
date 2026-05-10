@@ -15,7 +15,11 @@
         "price_usdc": "99.00",
         "payment_rail": "base_usdc",
         "release_sha256": "809b448f29f92815909a130b64e335fd086de0f1abe76e61e29103887825d66e",
-        "capability_summary": "Source-grounded fiscal-autonomy research pack for OpenClaw agents with retrieval, risk rails, paper-trading evaluation, and proof-of-utility reports."
+        "capability_summary": "Source-grounded fiscal-autonomy research pack for OpenClaw agents with retrieval, risk rails, paper-trading evaluation, and proof-of-utility reports.",
+        "market_name": "Agent Fiscal Autonomy Pack for OpenClaw",
+        "public_wrapper": "Agent Fiscal Autonomy Pack",
+        "technical_product": "Crypto Trading AI Knowledge Skill for OpenClaw",
+        "product_identity_note": "Agent Fiscal Autonomy Pack is the public proof and commerce wrapper for the paid Crypto Trading AI Knowledge Skill for OpenClaw: a source-grounded crypto trading LLM wiki/retrieval pack with strategy cards, risk rails, and paper-trading evaluation support."
       }
     ],
     "roadmap_tracks": [

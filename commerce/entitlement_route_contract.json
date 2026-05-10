@@ -17,7 +17,10 @@
     "payment_rail": "base_usdc",
     "package_sha256": "809b448f29f92815909a130b64e335fd086de0f1abe76e61e29103887825d66e",
     "allowed_version": "0.4.6-beta",
-    "delivery_status": "ready_for_manual_delivery"
+    "delivery_status": "ready_for_manual_delivery",
+    "market_name": "Agent Fiscal Autonomy Pack for OpenClaw",
+    "public_wrapper": "Agent Fiscal Autonomy Pack",
+    "technical_product": "Crypto Trading AI Knowledge Skill for OpenClaw"
   },
   "implementation_note": "Static MVP uses phase4_trading_vault/scripts/issue_base_usdc_entitlement.py."
 }

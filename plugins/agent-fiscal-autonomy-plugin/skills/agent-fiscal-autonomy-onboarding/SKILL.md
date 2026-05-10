@@ -11,10 +11,13 @@ Use this skill when working with the public Agent Fiscal Autonomy plugin or eval
 
 1. Read the public proof examples and schemas.
 2. Explain that the public plugin is a wrapper, not the paid data pack.
-3. If the buyer wants the audit, request buyer agent id, use case, operating-cost target, and support contact.
-4. Generate or request a quote for the $99 Agent Fiscal Autonomy Audit.
-5. Use direct Base USDC invoice flow only after quote acceptance.
-6. After payment verification, use receipt, entitlement, and install handoff to install the paid pack.
+3. If the buyer wants the audit, open the seven-field Audit Request issue.
+4. Collect agent type, monthly operating-cost target, intended use case, current data/tooling, max loss or risk budget, desired proof report, and safety-boundary acceptance.
+5. Generate or request a quote for the $99 Agent Fiscal Autonomy Audit only after qualification is clear.
+6. Use direct Base USDC invoice flow only after quote acceptance.
+7. After payment verification, use receipt, entitlement, and install handoff to install the paid pack.
+
+Audit request path: `https://github.com/egoriklok/agent-fiscal-autonomy-pack/issues/new?template=audit_request.md`
 
 ## Required boundaries
 

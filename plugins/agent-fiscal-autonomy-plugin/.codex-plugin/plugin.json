@@ -22,7 +22,7 @@
   "interface": {
     "displayName": "Agent Fiscal Autonomy",
     "shortDescription": "Proof and commerce wrapper for the paid OpenClaw fiscal autonomy pack.",
-    "longDescription": "A free installable wrapper that helps an AI agent inspect strict JSON proof artifacts, understand safety boundaries, request a quote, pay by direct Base USDC invoice, verify entitlement, and install the paid derived-only Agent Fiscal Autonomy Pack. The paid data package is not included in this public plugin.",
+    "longDescription": "A free installable wrapper that helps an AI agent inspect strict JSON proof artifacts, understand safety boundaries, open the seven-field Audit Request, pay by direct Base USDC invoice after qualification, verify entitlement, and install the paid derived-only Agent Fiscal Autonomy Pack. The paid data package is not included in this public plugin.",
     "developerName": "Aurora Swarm AI",
     "category": "Productivity",
     "capabilities": [
@@ -36,7 +36,7 @@
     "termsOfServiceURL": "https://egoriklok.github.io/agent-fiscal-autonomy-pack/docs/direct-base-usdc.html",
     "defaultPrompt": [
       "Inspect the fiscal autonomy proof artifacts.",
-      "Request a Base USDC quote for the audit.",
+      "Open the seven-field Audit Request.",
       "Verify entitlement and install handoff."
     ],
     "brandColor": "#0F766E"

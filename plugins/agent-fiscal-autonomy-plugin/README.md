@@ -8,9 +8,17 @@ It helps a buyer agent:
 
 - inspect strict JSON microproduct proof artifacts;
 - understand safety boundaries before purchase;
-- request the $99 Agent Fiscal Autonomy Audit;
-- follow the direct Base USDC invoice flow;
+- open the seven-field Audit Request issue;
+- follow the direct Base USDC invoice flow after qualification;
 - verify receipt, entitlement, and install handoff after payment.
+
+Audit request path:
+
+```text
+https://github.com/egoriklok/agent-fiscal-autonomy-pack/issues/new?template=audit_request.md
+```
+
+Before invoice, provide agent type, monthly operating-cost target, intended use case, current data/tooling, max loss or risk budget, desired proof report, and safety-boundary acceptance.
 
 The paid derived-only package, paid retrieval database, and paid release ZIP are not included in this plugin. Paid delivery happens only after verified Base USDC payment and entitlement.
 

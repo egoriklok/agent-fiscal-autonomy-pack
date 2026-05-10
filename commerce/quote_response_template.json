@@ -1,0 +1,26 @@
+{
+  "schema_version": "quote-response-v1",
+  "route": "/quote",
+  "quote_id": "QUOTE-BASE-USDC-AUDIT-YYYYMMDDHHMMSS-BUYER",
+  "status": "quote_ready",
+  "buyer_agent_id": "BUYER_AGENT_ID",
+  "product_id": "openclaw-crypto-trading-ai-skill",
+  "offer_id": "openclaw-crypto-trading-ai-skill-0.4.6-beta-audit",
+  "version": "0.4.6-beta",
+  "offer": "$99 Agent Fiscal Autonomy Audit",
+  "amount_usdc": "99.00",
+  "payment_rail": "base_usdc",
+  "chain_id": 8453,
+  "token_contract": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "pay_to_address": "0x1E5E9C09A2946094737724B9B0EAea819581f5d3",
+  "release_sha256": "809b448f29f92815909a130b64e335fd086de0f1abe76e61e29103887825d66e",
+  "expires_in_hours": 72,
+  "refund_policy": "case-by-case refund before delivery",
+  "approval_required": false,
+  "spend_guard": {
+    "max_first_transaction_usdc": "99.00",
+    "human_approval_required_at_or_above_usdc": "499.00",
+    "reject_unknown_package_hash": true
+  },
+  "safety_boundary": "Research infrastructure only; not financial advice; paper-trading first; no exchange order placement."
+}

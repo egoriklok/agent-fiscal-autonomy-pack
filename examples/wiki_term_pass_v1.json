@@ -1,0 +1,25 @@
+{
+  "version": "wiki_term_pass_v1",
+  "term": "Decentralized exchange",
+  "one_liner": "A smart-contract-based venue where users exchange crypto assets without a centralized matching intermediary.",
+  "definition": "A DEX is a decentralized application that uses smart contracts to coordinate swaps, liquidity pools, and settlement between users.",
+  "why_it_matters": [
+    "Agents can classify DeFi venue risk separately from centralized exchange risk.",
+    "Liquidity, slippage, bridge, and smart-contract risks must be modeled before any strategy research."
+  ],
+  "formula_text": "Not a formula; classify as DeFi infrastructure concept.",
+  "pitfalls": [
+    "Do not treat DEX liquidity as equivalent to centralized order-book depth.",
+    "Do not ignore smart-contract, bridge, and liquidity-provider risks."
+  ],
+  "related_terms": [
+    "liquidity provider",
+    "cross-chain bridge",
+    "lending protocol",
+    "staking"
+  ],
+  "source_ids": [
+    "1xcSi6f6-oaUz0uMaynMgtbLClrj4JAWl"
+  ],
+  "risk_note": "educational_not_trade_instruction"
+}

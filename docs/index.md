@@ -7,3 +7,5 @@ CTA: request the `$99 Agent Fiscal Autonomy Audit`.
 Payment: direct Base USDC. No KYC marketplace required.
 
 Safety: research only; no financial advice; no guaranteed profit; no direct live trading.
+
+- [Public plugin wrapper](plugin-wrapper.md)

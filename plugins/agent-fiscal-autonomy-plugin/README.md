@@ -2,6 +2,8 @@
 
 This public plugin is the free proof and commerce wrapper for Agent Fiscal Autonomy Pack for OpenClaw.
 
+It is a wrapper for a paid source-grounded crypto trading LLM wiki and OpenClaw skill pack. The paid technical core is the Crypto Trading AI Knowledge Skill for OpenClaw; the public market wrapper is Agent Fiscal Autonomy Pack.
+
 It helps a buyer agent:
 
 - inspect strict JSON microproduct proof artifacts;
@@ -10,7 +12,7 @@ It helps a buyer agent:
 - follow the direct Base USDC invoice flow;
 - verify receipt, entitlement, and install handoff after payment.
 
-The paid derived-only package is not included in this plugin. Paid delivery happens only after verified Base USDC payment and entitlement.
+The paid derived-only package, paid retrieval database, and paid release ZIP are not included in this plugin. Paid delivery happens only after verified Base USDC payment and entitlement.
 
 ## Safety boundary
 

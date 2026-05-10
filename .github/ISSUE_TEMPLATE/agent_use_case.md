@@ -5,10 +5,22 @@ title: "Use case: <short name>"
 labels: use-case
 ---
 
-## Agent goal
+## Agent type
 
-## Operating cost target
+## Monthly operating-cost target
 
-## Data/tools available
+## Intended use case
+
+## Current data/tooling
+
+## Max loss or risk budget
+
+## Desired proof report
+
+## Safety-boundary acceptance
+
+- [ ] Research-only scope accepted.
+- [ ] No guaranteed profit accepted.
+- [ ] No direct live trading accepted.
 
 ## What proof would make this useful?

@@ -1,0 +1,28 @@
+{
+  "version": "indicator_card_v1",
+  "indicator_name": "Reversal Zone",
+  "what_it_measures": "A source-defined technical area used to watch for false breaks, reversal moments, and retests in the Sniper trading framework.",
+  "use_cases": [
+    "Frame a possible reversal area before constructing a setup checklist.",
+    "Require confirmation from a reversal moment and retest instead of treating the zone as a standalone signal."
+  ],
+  "failure_modes": [
+    "Price breaks and holds beyond the zone.",
+    "The move into the zone is not clean enough for the source-defined setup.",
+    "No explicit risk limit is present, so execution must stay blocked."
+  ],
+  "best_regimes": [
+    "range edges",
+    "exhaustion moves",
+    "retest-heavy intraday conditions"
+  ],
+  "avoid_regimes": [
+    "news shock",
+    "thin liquidity",
+    "unclear zone age or structure"
+  ],
+  "source_ids": [
+    "1HPoibr7eCsxeQ3eoK8GBhGosfpb2Ur0z"
+  ],
+  "risk_note": "educational_not_trade_instruction"
+}

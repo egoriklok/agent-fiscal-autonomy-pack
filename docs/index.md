@@ -9,3 +9,4 @@ Payment: direct Base USDC. No KYC marketplace required.
 Safety: research only; no financial advice; no guaranteed profit; no direct live trading.
 
 - [Public plugin wrapper](plugin-wrapper.md)
+- [Agent loop memory model](strategy/agent-loop-memory.md)

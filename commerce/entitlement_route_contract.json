@@ -1,0 +1,23 @@
+{
+  "schema_version": "entitlement-route-contract-v1",
+  "route": "/entitlement",
+  "method": "POST",
+  "precondition": "payment verification status must be accepted",
+  "request": {
+    "invoice_id": "required string",
+    "tx_hash": "required Base transaction hash",
+    "buyer_agent_id": "required string"
+  },
+  "response": {
+    "schema_version": "manual-entitlement-v1",
+    "product_id": "openclaw-crypto-trading-ai-skill",
+    "offer_id": "openclaw-crypto-trading-ai-skill-0.4.6-beta",
+    "version": "0.4.6-beta",
+    "license_id": "LIC-HASH",
+    "payment_rail": "base_usdc",
+    "package_sha256": "809b448f29f92815909a130b64e335fd086de0f1abe76e61e29103887825d66e",
+    "allowed_version": "0.4.6-beta",
+    "delivery_status": "ready_for_manual_delivery"
+  },
+  "implementation_note": "Static MVP uses phase4_trading_vault/scripts/issue_base_usdc_entitlement.py."
+}

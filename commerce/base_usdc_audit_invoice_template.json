@@ -23,5 +23,8 @@
   "package_sha256_source": "release_manifest.json",
   "used_tx_hashes_ledger": "commerce/used_tx_hashes.json",
   "status": "awaiting_payment",
-  "generated_at": "2026-05-10T02:19:33.740777+00:00"
+  "generated_at": "2026-05-10T02:19:33.740777+00:00",
+  "market_name": "Agent Fiscal Autonomy Pack for OpenClaw",
+  "public_wrapper": "Agent Fiscal Autonomy Pack",
+  "technical_product": "Crypto Trading AI Knowledge Skill for OpenClaw"
 }

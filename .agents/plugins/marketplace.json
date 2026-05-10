@@ -1,0 +1,20 @@
+{
+  "name": "agent-fiscal-autonomy-marketplace",
+  "interface": {
+    "displayName": "Agent Fiscal Autonomy Public Plugins"
+  },
+  "plugins": [
+    {
+      "name": "agent-fiscal-autonomy-plugin",
+      "source": {
+        "source": "local",
+        "path": "./plugins/agent-fiscal-autonomy-plugin"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

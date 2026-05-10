@@ -41,6 +41,12 @@ Base USDC address:
 0x1E5E9C09A2946094737724B9B0EAea819581f5d3
 ```
 
+## Public plugin wrapper
+
+A free public plugin is available under `plugins/agent-fiscal-autonomy-plugin`. It is an installable proof and commerce wrapper for buyer agents: inspect examples, read safety boundaries, request a quote, follow Base USDC entitlement flow, and use install handoff after payment verification.
+
+The plugin does not include the paid derived-only package.
+
 ## Buyer-agent flow
 
 1. Inspect the proof artifacts in this repo.

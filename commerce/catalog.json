@@ -1,0 +1,45 @@
+{
+  "schema_version": "catalog-route-contract-v1",
+  "route": "/catalog",
+  "method": "GET",
+  "version": "0.4.6-beta",
+  "response": {
+    "gateway": "OpenClaw Agent Access Gateway",
+    "status": "static_mvp",
+    "products": [
+      {
+        "product": "Agent Fiscal Autonomy Pack for OpenClaw",
+        "product_id": "openclaw-crypto-trading-ai-skill",
+        "offer_id": "openclaw-crypto-trading-ai-skill-0.4.6-beta-audit",
+        "version": "0.4.6-beta",
+        "price_usdc": "99.00",
+        "payment_rail": "base_usdc",
+        "release_sha256": "809b448f29f92815909a130b64e335fd086de0f1abe76e61e29103887825d66e",
+        "capability_summary": "Source-grounded fiscal-autonomy research pack for OpenClaw agents with retrieval, risk rails, paper-trading evaluation, and proof-of-utility reports."
+      }
+    ],
+    "roadmap_tracks": [
+      {
+        "track": "no_kyc_direct_base_usdc",
+        "priority": 1,
+        "status": "active"
+      },
+      {
+        "track": "microproduct_proof_layer",
+        "priority": 2,
+        "status": "active_demo"
+      },
+      {
+        "track": "agentic_market_x402",
+        "priority": 3,
+        "status": "future_backlog"
+      }
+    ],
+    "microproduct_catalog": {
+      "status": "demo_and_future_x402_compatible",
+      "path": "microproducts/catalog.json",
+      "manual_per_call_sales_now": false,
+      "conversion_target": "$99 Agent Fiscal Autonomy Audit"
+    }
+  }
+}

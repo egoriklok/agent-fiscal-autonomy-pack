@@ -23,7 +23,7 @@ Use this skill when working with the public Agent Fiscal Autonomy plugin or eval
 - Do not place or instruct live exchange orders.
 - Do not handle wallet seed phrases or private keys.
 - Do not expose raw vault files or private delivery links before entitlement.
-- Treat x402 and Agentic.Market as future compatibility unless a no-KYC production path exists.
+- Treat x402 and Agentic.Market as future compatibility unless a direct-settlement production path exists.
 
 ## Buyer-agent proof prompts
 

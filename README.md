@@ -1,6 +1,6 @@
 # Agent Fiscal Autonomy Pack for OpenClaw
 
-No-KYC Base USDC agent-commerce proof layer for OpenClaw agents.
+Direct Base USDC agent-commerce proof layer for OpenClaw agents.
 
 This public repo is the proof and commerce wrapper for a paid source-grounded crypto trading LLM wiki and OpenClaw skill pack.
 
@@ -50,6 +50,7 @@ Base USDC address:
 ```text
 0x1E5E9C09A2946094737724B9B0EAea819581f5d3
 ```
+
 
 ## Public plugin wrapper
 

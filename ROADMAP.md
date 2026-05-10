@@ -2,11 +2,11 @@
 
 ## 0.4.6-beta
 
-Static derived-only package with agent-commerce contracts, self-funding research USP, manual entitlement, proof/demo tasks, checksums, eval reports, and no-KYC direct Base USDC launch flow.
+Static derived-only package with agent-commerce contracts, self-funding research USP, manual entitlement, proof/demo tasks, checksums, eval reports, and direct Base USDC launch flow.
 
 ## 0.4.7-beta
 
-No-KYC revenue track: finalize Drive or manual delivery, publish safe launch copy, qualify leads into the $99 Agent Fiscal Autonomy Audit, and use strict JSON microproduct demos as proof before purchase.
+Direct Base USDC revenue track: finalize Drive or manual delivery, publish safe launch copy, qualify leads into the $99 Agent Fiscal Autonomy Audit, and use strict JSON microproduct demos as proof before purchase.
 
 ## 0.4.8-beta
 
@@ -18,8 +18,8 @@ Increase extraction coverage for deferred manual/media/archive items where legal
 
 ## 0.6-beta
 
-x402-compatible future track: expose static route contracts and testnet-only demos. Do not depend on production CDP/Agentic.Market unless a no-KYC facilitator, verified partner, or acceptable verified account exists.
+x402-compatible future track: expose static route contracts and testnet-only demos. Do not depend on production CDP/Agentic.Market unless a compatible facilitator, verified partner, or acceptable verified account exists.
 
 ## 1.0
 
-Stable OpenClaw marketplace distribution with automated verification, update checks, documented support process, proof-of-usefulness benchmark history, and a clear separation between no-KYC direct sales and any future marketplace integrations.
+Stable OpenClaw marketplace distribution with automated verification, update checks, documented support process, proof-of-usefulness benchmark history, and a clear separation between direct Base USDC sales and any future marketplace integrations.

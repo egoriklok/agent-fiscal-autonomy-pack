@@ -8,7 +8,7 @@ Formula: Agent Fiscal Autonomy Pack, powered by the Crypto Trading AI Knowledge 
 
 CTA: request the `$99 Agent Fiscal Autonomy Audit`.
 
-Payment: direct Base USDC. No KYC marketplace required.
+Payment: direct Base USDC. No custodial marketplace dependency.
 
 Safety: research only; no financial advice; no guaranteed profit; no direct live trading.
 

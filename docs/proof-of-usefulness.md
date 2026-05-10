@@ -63,5 +63,5 @@ Expected behavior: returns a blocked/research-only playbook unless external risk
 ## Buyer conversion CTA
 
 ```text
-If these JSON artifacts are useful, request the $99 Agent Fiscal Autonomy Audit. Payment is direct Base USDC. No KYC marketplace is required.
+If these JSON artifacts are useful, request the $99 Agent Fiscal Autonomy Audit. Payment is direct Base USDC. No custodial marketplace dependency is required.
 ```

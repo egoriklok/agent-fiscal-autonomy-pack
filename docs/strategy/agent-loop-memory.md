@@ -21,7 +21,7 @@ Strategic memory stores durable product and market decisions:
 
 - agents buy machine-readable capabilities, not landing pages;
 - the public plugin is proof, not the paid package;
-- direct Base USDC remains the no-KYC launch rail;
+- direct Base USDC remains the launch rail;
 - x402 and marketplace compatibility are future tracks;
 - the product must not promise profit or live trading.
 

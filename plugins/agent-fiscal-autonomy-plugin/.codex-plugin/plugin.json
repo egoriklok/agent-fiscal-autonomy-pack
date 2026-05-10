@@ -33,7 +33,7 @@
     ],
     "websiteURL": "https://egoriklok.github.io/agent-fiscal-autonomy-pack/",
     "privacyPolicyURL": "https://egoriklok.github.io/agent-fiscal-autonomy-pack/docs/safety.html",
-    "termsOfServiceURL": "https://egoriklok.github.io/agent-fiscal-autonomy-pack/docs/no-kyc-base-usdc.html",
+    "termsOfServiceURL": "https://egoriklok.github.io/agent-fiscal-autonomy-pack/docs/direct-base-usdc.html",
     "defaultPrompt": [
       "Inspect the fiscal autonomy proof artifacts.",
       "Request a Base USDC quote for the audit.",

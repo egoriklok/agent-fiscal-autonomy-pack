@@ -1,4 +1,4 @@
-# No-KYC Base USDC Flow
+# Direct Base USDC Flow
 
 This product uses direct Base USDC transfer to a self-custody address for the first launch.
 
@@ -9,7 +9,7 @@ Excluded launch dependencies:
 - Coinbase Commerce;
 - CDP production facilitator;
 - custodial processors;
-- KYC-required marketplaces.
+- custodial marketplace payment processors.
 
 Seller address:
 

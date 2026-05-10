@@ -16,4 +16,4 @@ Flow:
 6. Seller issues receipt and entitlement.
 7. Buyer receives restricted delivery manifest and install handoff.
 
-No private keys, seed phrases, custodial payment accounts, or KYC-required rails are part of this public plugin flow.
+No private keys, seed phrases, custodial payment accounts, or custodial payment rails are part of this public plugin flow.

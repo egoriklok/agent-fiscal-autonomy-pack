@@ -1,0 +1,44 @@
+{
+  "name": "agent-fiscal-autonomy-plugin",
+  "version": "0.1.0",
+  "description": "Free OpenClaw/Codex plugin wrapper for Agent Fiscal Autonomy Pack proof, quote, Base USDC entitlement, and safe install handoff.",
+  "author": {
+    "name": "Aurora Swarm AI",
+    "email": "support@example.invalid",
+    "url": "https://github.com/egoriklok/agent-fiscal-autonomy-pack"
+  },
+  "homepage": "https://egoriklok.github.io/agent-fiscal-autonomy-pack/",
+  "repository": "https://github.com/egoriklok/agent-fiscal-autonomy-pack",
+  "license": "MIT",
+  "keywords": [
+    "openclaw",
+    "agent-commerce",
+    "base-usdc",
+    "fiscal-autonomy",
+    "strategy-research",
+    "entitlement"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Agent Fiscal Autonomy",
+    "shortDescription": "Proof and commerce wrapper for the paid OpenClaw fiscal autonomy pack.",
+    "longDescription": "A free installable wrapper that helps an AI agent inspect strict JSON proof artifacts, understand safety boundaries, request a quote, pay by direct Base USDC invoice, verify entitlement, and install the paid derived-only Agent Fiscal Autonomy Pack. The paid data package is not included in this public plugin.",
+    "developerName": "Aurora Swarm AI",
+    "category": "Productivity",
+    "capabilities": [
+      "Research",
+      "Commerce",
+      "Install Handoff",
+      "Safety Boundary"
+    ],
+    "websiteURL": "https://egoriklok.github.io/agent-fiscal-autonomy-pack/",
+    "privacyPolicyURL": "https://egoriklok.github.io/agent-fiscal-autonomy-pack/docs/safety.html",
+    "termsOfServiceURL": "https://egoriklok.github.io/agent-fiscal-autonomy-pack/docs/no-kyc-base-usdc.html",
+    "defaultPrompt": [
+      "Inspect the fiscal autonomy proof artifacts.",
+      "Request a Base USDC quote for the audit.",
+      "Verify entitlement and install handoff."
+    ],
+    "brandColor": "#0F766E"
+  }
+}

@@ -22,5 +22,8 @@
     "human_approval_required_at_or_above_usdc": "499.00",
     "reject_unknown_package_hash": true
   },
-  "safety_boundary": "Research infrastructure only; not financial advice; paper-trading first; no exchange order placement."
+  "safety_boundary": "Research infrastructure only; not financial advice; paper-trading first; no exchange order placement.",
+  "market_name": "Agent Fiscal Autonomy Pack for OpenClaw",
+  "public_wrapper": "Agent Fiscal Autonomy Pack",
+  "technical_product": "Crypto Trading AI Knowledge Skill for OpenClaw"
 }

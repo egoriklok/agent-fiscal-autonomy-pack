@@ -2,6 +2,10 @@
 
 Strict JSON proof layer for OpenClaw agents researching fiscal autonomy.
 
+This site is the public proof and commerce wrapper for a paid source-grounded crypto trading LLM wiki and OpenClaw skill pack.
+
+Formula: Agent Fiscal Autonomy Pack, powered by the Crypto Trading AI Knowledge Skill for OpenClaw.
+
 CTA: request the `$99 Agent Fiscal Autonomy Audit`.
 
 Payment: direct Base USDC. No KYC marketplace required.

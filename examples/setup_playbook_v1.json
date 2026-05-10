@@ -1,0 +1,35 @@
+{
+  "version": "setup_playbook_v1",
+  "pattern": "Basic Entry Point plus Safe protocol",
+  "market_regime": "intraday reversal research only",
+  "entry_checklist": [
+    "Identify a valid reversal zone.",
+    "Wait for a false break and return back through the zone.",
+    "Confirm reversal-moment structure.",
+    "Split position conceptually into two half-size units for paper-trading simulation.",
+    "Move the remaining simulated unit to breakeven only after price reaches one stop distance."
+  ],
+  "invalidation_rules": [
+    "Price holds beyond the reversal zone.",
+    "No reversal moment forms.",
+    "The stop distance cannot be defined before entry.",
+    "The risk rule cannot be expressed in account-risk terms."
+  ],
+  "avoid_if": [
+    "No source evidence is attached.",
+    "A buyer asks for live exchange order placement.",
+    "Market is news-driven or liquidity is abnormal.",
+    "The strategy card lacks source_ids, entry trigger, invalidation, or risk rule."
+  ],
+  "required_evidence": [
+    "source_id",
+    "zone definition",
+    "false-break condition",
+    "stop placement",
+    "risk handling rule"
+  ],
+  "source_ids": [
+    "1-lJROs6u-RyxSiYc7qMLFYXSrNdm6gng"
+  ],
+  "risk_note": "research_only_not_execution_advice"
+}

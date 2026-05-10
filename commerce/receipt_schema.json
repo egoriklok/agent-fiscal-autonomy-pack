@@ -33,5 +33,8 @@
     "claw_cash",
     "base_usdc",
     "polygon_usdt"
-  ]
+  ],
+  "market_name": "Agent Fiscal Autonomy Pack for OpenClaw",
+  "public_wrapper": "Agent Fiscal Autonomy Pack",
+  "product_identity_note": "Agent Fiscal Autonomy Pack is the public proof and commerce wrapper for the paid Crypto Trading AI Knowledge Skill for OpenClaw: a source-grounded crypto trading LLM wiki/retrieval pack with strategy cards, risk rails, and paper-trading evaluation support."
 }

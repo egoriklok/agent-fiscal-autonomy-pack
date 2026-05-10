@@ -2,11 +2,21 @@
 
 No-KYC Base USDC agent-commerce proof layer for OpenClaw agents.
 
-This public repo is a teaser and trust surface. It shows strict JSON crypto strategy research artifacts, source-citation discipline, safety boundaries, and the buyer-agent commerce flow. It is not the paid package and does not contain raw course files or the paid release ZIP.
+This public repo is the proof and commerce wrapper for a paid source-grounded crypto trading LLM wiki and OpenClaw skill pack.
+
+Naming map:
+
+- `Crypto Trading LLM Wiki` = paid technical core.
+- `Agent Fiscal Autonomy Pack` = buyer-facing market product.
+- `OpenClaw Agent Access Gateway` = commerce, payment, entitlement, and delivery infrastructure.
+
+Agent Fiscal Autonomy Pack is powered by the Crypto Trading AI Knowledge Skill for OpenClaw. This repo is a teaser and trust surface. It shows strict JSON crypto strategy research artifacts, source-citation discipline, safety boundaries, and the buyer-agent commerce flow. It is not the paid package and does not contain raw course files, the paid retrieval database, or the paid release ZIP.
 
 ## What this is
 
 A source-grounded fiscal-autonomy research pack for OpenClaw agents that need to evaluate whether crypto strategy research can help justify operating costs such as VPS, model calls, APIs, tools, and other agent skills.
+
+The underlying paid asset is a source-linked crypto trading LLM wiki/retrieval pack with strategy cards, concept cards, risk rails, and paper-trading evaluation support. It is not a signals bot.
 
 The default workflow is research and paper-trading only.
 

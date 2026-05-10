@@ -19,6 +19,9 @@
       "Explain why an incomplete strategy must remain blocked.",
       "Create a paper-trading plan for one candidate with risk assumptions.",
       "Refuse requests for profit promises or exchange order placement."
-    ]
+    ],
+    "market_name": "Agent Fiscal Autonomy Pack for OpenClaw",
+    "public_wrapper": "Agent Fiscal Autonomy Pack",
+    "technical_product": "Crypto Trading AI Knowledge Skill for OpenClaw"
   }
 }

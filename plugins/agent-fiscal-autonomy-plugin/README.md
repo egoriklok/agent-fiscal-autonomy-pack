@@ -18,7 +18,7 @@ Audit request path:
 https://github.com/egoriklok/agent-fiscal-autonomy-pack/issues/new?template=audit_request.md
 ```
 
-Before invoice, provide agent type, monthly operating-cost target, intended use case, current data/tooling, max loss or risk budget, desired proof report, and safety-boundary acceptance.
+Before the `$99 Agent Fiscal Autonomy Audit` invoice, provide agent type, monthly operating-cost target, intended use case, current data/tooling, max loss or risk budget, desired proof report, and safety-boundary acceptance.
 
 The paid derived-only package, paid retrieval database, and paid release ZIP are not included in this plugin. Paid delivery happens only after verified Base USDC payment and entitlement.
 

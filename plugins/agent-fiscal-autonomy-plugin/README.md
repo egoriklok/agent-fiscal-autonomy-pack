@@ -1,16 +1,14 @@
 # Agent Fiscal Autonomy Plugin
 
-This public plugin is the free proof and commerce wrapper for Agent Fiscal Autonomy Pack for OpenClaw.
+This public plugin is the free proof and commerce wrapper for Agent Fiscal Autonomy Audit.
 
-It is a wrapper for a paid source-grounded crypto trading LLM wiki and OpenClaw skill pack. The paid technical core is the Crypto Trading AI Knowledge Skill for OpenClaw; the public market wrapper is Agent Fiscal Autonomy Pack.
+It helps a buyer or seller agent:
 
-It helps a buyer agent:
-
-- inspect strict JSON microproduct proof artifacts;
-- understand safety boundaries before purchase;
+- inspect public no-secret readiness proof artifacts;
+- understand safety boundaries before requesting a paid audit;
 - open the seven-field Audit Request issue;
-- follow the direct Base USDC invoice flow after qualification;
-- verify receipt, entitlement, and install handoff after payment.
+- keep payment closed until qualification and explicit scope acceptance;
+- verify receipt, entitlement, and delivery handoff after payment.
 
 Audit request path:
 
@@ -18,21 +16,28 @@ Audit request path:
 https://github.com/egoriklok/agent-fiscal-autonomy-pack/issues/new?template=audit_request.md
 ```
 
-Before the `$99 Agent Fiscal Autonomy Audit` invoice, provide agent type, monthly operating-cost target, intended use case, current data/tooling, max loss or risk budget, desired proof report, and safety-boundary acceptance.
+Before the `$99 Agent Fiscal Autonomy Audit` invoice, provide:
 
-The paid derived-only package, paid retrieval database, and paid release ZIP are not included in this plugin. Paid delivery happens only after verified Base USDC payment and entitlement.
+- `seller_role`
+- `capability_surface`
+- `monetization_state`
+- `access_control`
+- `approval_and_limit_policy`
+- `receipt_or_audit_trail`
+- `revocation_and_next_threshold`
 
-## Safety boundary
+The paid report is not included in this plugin. Paid delivery happens only after explicit scope acceptance, verified Base USDC payment, and entitlement.
 
-- Not financial advice.
-- No guaranteed profit.
-- No direct live trading.
-- No exchange order placement.
-- No wallet seed or private key handling.
-- No raw private vault files.
-- No private Google Drive vault links.
+## Safety Boundary
 
-## Public proof assets
+- No financial, legal, tax, investment, or compliance advice.
+- No guaranteed revenue, security, compliance, or incident prevention.
+- No live trading or exchange order placement.
+- No custody of buyer or seller funds.
+- No wallet seed, private key, cookie, session, OAuth token, API key, auth header, or raw credential handling.
+- No private delivery links before verified payment and entitlement.
+
+## Public Proof Assets
 
 Use the public repository examples and schemas before requesting an audit:
 
@@ -43,14 +48,8 @@ Use the public repository examples and schemas before requesting an audit:
 - schemas/indicator_card_v1.schema.json
 - schemas/setup_playbook_v1.schema.json
 
-## Payment rail
+## Payment Rail
 
-Default external rail: direct Base USDC.
+Default external rail: Base USDC after qualification.
 
-Receiving address:
-
-```text
-0x1E5E9C09A2946094737724B9B0EAea819581f5d3
-```
-
-Do not send funds until an invoice with amount, expiry, package hash, and license id has been issued.
+Do not send funds until a quote or payment mandate with amount, expiry, scope, delivery SLA, verification path, and recipient reference has been issued after explicit scope acceptance.

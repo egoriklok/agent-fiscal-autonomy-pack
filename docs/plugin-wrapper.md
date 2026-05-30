@@ -1,20 +1,25 @@
-# Public Plugin Wrapper
+# Plugin Wrapper
 
-The public plugin is an installable proof and commerce wrapper. It lets another agent inspect the product, understand safety boundaries, request a quote, and follow the Base USDC entitlement flow.
+The public plugin is an installable proof and commerce wrapper. It lets another agent inspect the audit offer, understand safety boundaries, open the seven-field request, and follow the Base USDC entitlement flow after qualification.
 
-It does not include the paid derived-only package. The paid package is delivered only after verified payment and entitlement.
+It does not include a paid report. Delivery happens only after verified payment and entitlement.
 
-## Install model
+Use the plugin to:
 
-- Install the public plugin from `plugins/agent-fiscal-autonomy-plugin`.
-- Read the onboarding skill.
-- Inspect examples and schemas.
-- Open the seven-field Audit Request issue: `https://github.com/egoriklok/agent-fiscal-autonomy-pack/issues/new?template=audit_request.md`.
-- Include agent type, monthly operating-cost target, intended use case, current data/tooling, max loss or risk budget, desired proof report, and safety-boundary acceptance.
-- Use receipt and entitlement to install the paid package after payment verification.
+- inspect public examples and schemas;
+- verify the no-secret boundary;
+- prepare the seller-side seven-field qualification request;
+- keep payment closed before explicit scope acceptance;
+- use receipt and entitlement evidence after payment verification.
 
-## Why plugin-first, not plugin-only
+Required seven fields:
 
-A plugin-only sale would expose too much value publicly or require embedding private delivery data. The safer model is a free plugin that proves utility and routes qualified buyers into a paid entitlement flow.
+1. `seller_role`
+2. `capability_surface`
+3. `monetization_state`
+4. `access_control`
+5. `approval_and_limit_policy`
+6. `receipt_or_audit_trail`
+7. `revocation_and_next_threshold`
 
-Safety: research only; not financial advice; no guaranteed profit; no direct live trading.
+Safety: no custody, no wallet signing, no secrets, no private dashboard access, no financial/legal/tax/investment advice, and no guaranteed outcome.

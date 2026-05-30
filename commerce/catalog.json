@@ -1,48 +1,51 @@
 {
-  "schema_version": "catalog-route-contract-v1",
+  "schema_version": "catalog-route-contract-v2",
   "route": "/catalog",
   "method": "GET",
-  "version": "0.4.6-beta",
+  "version": "0.4.7-r1-cjm-alignment",
   "response": {
     "gateway": "OpenClaw Agent Access Gateway",
     "status": "static_mvp",
     "products": [
       {
-        "product": "Agent Fiscal Autonomy Pack for OpenClaw",
-        "product_id": "openclaw-crypto-trading-ai-skill",
-        "offer_id": "openclaw-crypto-trading-ai-skill-0.4.6-beta-audit",
-        "version": "0.4.6-beta",
+        "product": "Agent Fiscal Autonomy Audit",
+        "product_id": "agent-fiscal-autonomy-audit",
+        "offer_id": "agent-fiscal-autonomy-audit-99-usdc-base",
+        "version": "0.4.7-r1-cjm-alignment",
         "price_usdc": "99.00",
-        "payment_rail": "base_usdc",
-        "release_sha256": "809b448f29f92815909a130b64e335fd086de0f1abe76e61e29103887825d66e",
-        "capability_summary": "Source-grounded fiscal-autonomy research pack for OpenClaw agents with retrieval, risk rails, paper-trading evaluation, and proof-of-utility reports.",
-        "market_name": "Agent Fiscal Autonomy Pack for OpenClaw",
+        "payment_rail": "base_usdc_after_qualification",
+        "qualification_required_before_invoice": true,
+        "scope_acceptance_required_before_payment_route": true,
+        "capability_summary": "No-secret readiness audit for payable MCP/API services, agent tools, and agent spend surfaces. Reviews authority boundaries, approval and limits, receipt evidence, audit trail, revocation path, and next safe threshold.",
+        "market_name": "Agent Fiscal Autonomy Audit",
         "public_wrapper": "Agent Fiscal Autonomy Pack",
-        "technical_product": "Crypto Trading AI Knowledge Skill for OpenClaw",
-        "product_identity_note": "Agent Fiscal Autonomy Pack is the public proof and commerce wrapper for the paid Crypto Trading AI Knowledge Skill for OpenClaw: a source-grounded crypto trading LLM wiki/retrieval pack with strategy cards, risk rails, and paper-trading evaluation support."
+        "delivery_formats": [
+          "human_readable_markdown_report",
+          "machine_readable_json_summary"
+        ],
+        "product_identity_note": "The public repo is a trust surface and qualification gateway for a fixed-scope Base-USDC readiness audit. It is not a trading-signal product, custody service, wallet signer, or private delivery package."
       }
     ],
     "roadmap_tracks": [
       {
-        "track": "no_kyc_direct_base_usdc",
+        "track": "no_secret_seller_readiness_audit",
         "priority": 1,
         "status": "active"
       },
       {
-        "track": "microproduct_proof_layer",
+        "track": "direct_base_usdc_after_scope_acceptance",
         "priority": 2,
-        "status": "active_demo"
+        "status": "active_gate_controlled"
       },
       {
-        "track": "agentic_market_x402",
+        "track": "x402_compatible_future_endpoint",
         "priority": 3,
         "status": "future_backlog"
       }
     ],
-    "microproduct_catalog": {
-      "status": "demo_and_future_x402_compatible",
-      "path": "microproducts/catalog.json",
-      "manual_per_call_sales_now": false,
+    "free_snapshot": {
+      "status": "active",
+      "payment_request_allowed": false,
       "conversion_target": "$99 Agent Fiscal Autonomy Audit"
     }
   }

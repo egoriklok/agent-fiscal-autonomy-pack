@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/egoriklok/agent-fiscal-autonomy-pack/deliverables/agent_fiscal_autonomy_audit_summary.schema.json",
+  "title": "Agent Fiscal Autonomy Audit Summary",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "target_name",
+    "readiness_status",
+    "authority_map",
+    "gaps",
+    "next_safe_threshold",
+    "no_secret_boundary_confirmed"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "agent-fiscal-autonomy-audit-summary-v1"
+    },
+    "target_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "readiness_status": {
+      "enum": ["Ready", "Partial", "Blocked"]
+    },
+    "authority_map": {
+      "type": "object",
+      "required": ["owner", "approval_source", "surface", "limit_policy"],
+      "properties": {
+        "owner": { "type": "string" },
+        "approval_source": { "type": "string" },
+        "surface": { "type": "string" },
+        "limit_policy": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["area", "finding", "risk", "recommended_fix"],
+        "properties": {
+          "area": {
+            "enum": ["approval_limits", "pricing_payment", "receipt_audit_trail", "revocation", "secret_custody_boundary"]
+          },
+          "finding": { "type": "string" },
+          "risk": { "type": "string" },
+          "recommended_fix": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "next_safe_threshold": {
+      "type": "string",
+      "minLength": 1
+    },
+    "no_secret_boundary_confirmed": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

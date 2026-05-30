@@ -1,18 +1,22 @@
-# Agent Fiscal Autonomy Pack
+# Agent Fiscal Autonomy Audit
 
-Strict JSON proof layer for OpenClaw agents researching fiscal autonomy.
+Public no-secret readiness snapshots for payable MCP/API services, agent tools, and agent spend surfaces.
 
-This site is the public proof and commerce wrapper for a paid source-grounded crypto trading LLM wiki and OpenClaw skill pack.
+The fixed paid offer is the `$99 Agent Fiscal Autonomy Audit`: a bounded review of approval boundaries, spend limits, receipt evidence, audit trails, revocation paths, and the next safe threshold for agent-facing monetization.
 
-Formula: Agent Fiscal Autonomy Pack, powered by the Crypto Trading AI Knowledge Skill for OpenClaw.
+CTA: open the seven-field Audit Request issue only when the scope is real and non-secret:
 
-CTA: open the seven-field Audit Request issue: `https://github.com/egoriklok/agent-fiscal-autonomy-pack/issues/new?template=audit_request.md`.
+```text
+https://github.com/egoriklok/agent-fiscal-autonomy-pack/issues/new?template=audit_request.md
+```
 
-Before invoice, include agent type, monthly operating-cost target, intended use case, current data/tooling, max loss or risk budget, desired proof report, and safety-boundary acceptance.
+Before invoice, provide `seller_role`, `capability_surface`, `monetization_state`, `access_control`, `approval_and_limit_policy`, `receipt_or_audit_trail`, and `revocation_and_next_threshold`.
 
-Payment: direct Base USDC after qualification is clear. No custodial marketplace dependency.
+Payment: Base USDC after qualification and explicit scope acceptance. No payment route before the gate.
 
-Safety: research only; no financial advice; no guaranteed profit; no direct live trading.
+Safety: no custody, no wallet signing, no secrets, no private dashboard access, no financial advice, no guaranteed outcome.
 
+- [One-page offer](one-page-offer.md)
 - [Public plugin wrapper](plugin-wrapper.md)
+- [Retention trigger map](retention-trigger-map.md)
 - [Agent loop memory model](strategy/agent-loop-memory.md)

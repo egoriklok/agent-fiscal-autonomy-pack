@@ -1,0 +1,65 @@
+{
+  "schema_version": "r1-product-card-v1",
+  "product_name": "Agent Fiscal Autonomy Audit",
+  "source_language": "en",
+  "status": "public_trust_surface",
+  "revenue_status": "not_verified",
+  "verified_revenue_usdc": 0,
+  "one_line_value": "A bounded no-secret audit that checks whether an AI agent's spending or monetization surface is scoped, approved, logged, revocable, and ready for safe expansion.",
+  "target_buyer": {
+    "primary": "Builders or operators of payable MCP/API services, agent tools, SaaS workflows, datasets, or crypto/stablecoin rails.",
+    "buyer_agent_fit": "Buyer agents may use this card to decide whether to request a public snapshot or open the seven-field audit request. This card is not an invoice or payment request."
+  },
+  "problem_signals": [
+    "Agent-facing capability is public or nearly public but approval boundaries are unclear.",
+    "Spend limits, pricing, receipts, or revocation paths are scattered or undocumented.",
+    "Payment or settlement proof is not linked to a usable audit trail.",
+    "Operators need a safe next threshold before expanding autonomy."
+  ],
+  "scope_in": [
+    "Authority map for agent spend or monetization surfaces.",
+    "Approval and limit evidence review.",
+    "Public or redacted inventory of paid API, MCP, wallet, SaaS, credit, or dataset surfaces.",
+    "Receipt and audit-trail gap analysis.",
+    "Revocation-readiness check.",
+    "Next safe threshold recommendation."
+  ],
+  "scope_out": [
+    "Private keys, seed phrases, cookies, sessions, tokens, API keys, auth headers, or credential handling.",
+    "Financial, legal, tax, investment, compliance, custody, or incident-response advice.",
+    "Taking control of buyer funds, wallets, browsers, dashboards, or production systems.",
+    "Guarantees of revenue, security, compliance, or incident prevention.",
+    "Public disclosure of private buyer details."
+  ],
+  "qualification_required_before_invoice": true,
+  "qualification_fields_required": [
+    "seller_role",
+    "capability_surface",
+    "monetization_state",
+    "access_control",
+    "approval_and_limit_policy",
+    "receipt_or_audit_trail",
+    "revocation_and_next_threshold"
+  ],
+  "invoice_policy": {
+    "invoice_before_qualification": false,
+    "payment_rails_allowed_after_gate": [
+      "USDC_BASE"
+    ],
+    "payment_verification_separate_from_wallet_access": true
+  },
+  "delivery_artifact": {
+    "name": "Agent Fiscal Autonomy Audit Report",
+    "format": [
+      "human_readable_markdown",
+      "machine_readable_json_summary"
+    ],
+    "delivery_before_verified_payment": false
+  },
+  "safety_constraints": {
+    "no_buyer_contact_from_this_artifact": true,
+    "no_payment_link": true,
+    "no_secret_collection": true,
+    "no_revenue_claim": true
+  }
+}

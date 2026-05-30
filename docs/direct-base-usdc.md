@@ -1,6 +1,6 @@
 # Direct Base USDC Flow
 
-This product uses direct Base USDC transfer to a self-custody address for the first launch.
+This product can use direct Base USDC transfer for the first launch, but only after the readiness audit scope is qualified and explicitly accepted.
 
 Excluded launch dependencies:
 
@@ -11,15 +11,23 @@ Excluded launch dependencies:
 - custodial processors;
 - custodial marketplace payment processors.
 
-Seller address:
+## Payment Route Gate
 
-```text
-0x1E5E9C09A2946094737724B9B0EAea819581f5d3
-```
+The seller receiving reference is issued only inside a qualified quote, invoice, or payment mandate. Do not send funds from this public document alone.
 
-Security boundaries:
+Required preconditions:
+
+- seven-field qualification is complete;
+- scope is fixed and accepted;
+- quote id or payment mandate exists;
+- amount, asset, chain, expiry, delivery SLA, refund rule, and verification path are visible;
+- no secrets, custody, wallet signing, or private dashboard access are requested.
+
+## Security Boundaries
 
 - No seed phrases.
 - No private keys.
-- No custody of buyer funds.
+- No cookies, sessions, auth headers, OAuth tokens, or API keys.
+- No custody of buyer or seller funds.
+- No payment verification through wallet access.
 - Refunds, if any, are separate seller-side transfers before delivery only.

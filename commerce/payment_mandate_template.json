@@ -1,0 +1,33 @@
+{
+  "schema_version": "payment-mandate-v1",
+  "status": "draft_not_payable",
+  "mandate_id": "MANDATE-AFA-AUDIT-YYYYMMDD-001",
+  "quote_id": "QUOTE-AFA-AUDIT-YYYYMMDDHHMMSS-BUYER",
+  "product_id": "agent-fiscal-autonomy-audit",
+  "offer": "$99 Agent Fiscal Autonomy Audit",
+  "amount": "99.00",
+  "asset": "USDC",
+  "network": "base",
+  "chain_id": 8453,
+  "scheme": "exact",
+  "payee": "ISSUED_ONLY_AFTER_SCOPE_ACCEPTANCE",
+  "expires_at": "",
+  "qualified_scope_reference": "",
+  "delivery_sla_hours_after_verified_payment": 72,
+  "refund_policy": "case-by-case refund before delivery; no refund after delivered artifact acceptance unless separately agreed",
+  "verification_path": "Non-custodial Base transaction hash verification before delivery.",
+  "required_preconditions": [
+    "explicit_scope_acceptance",
+    "seven_field_qualification_complete",
+    "no_secret_inputs_requested_or_received",
+    "fixed_scope_confirmed",
+    "payment_route_opened_by_seller"
+  ],
+  "blocked_if": [
+    "missing_qualification_field",
+    "secret_or_custody_request",
+    "payment_before_scope_acceptance",
+    "delivery_before_verified_payment",
+    "out_of_scope_advice_or_guarantee"
+  ]
+}

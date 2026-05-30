@@ -8,7 +8,7 @@ Before publishing:
 - Confirm the repo contains only files from this bundle.
 - Confirm no paid ZIP is attached to GitHub Releases.
 - Confirm no private Drive vault links are present.
-- Confirm Base USDC address is correct: `0x1E5E9C09A2946094737724B9B0EAea819581f5d3`.
+- Confirm the Base USDC receiving reference only inside a qualified quote, invoice, or payment mandate after explicit scope acceptance.
 - Confirm GitHub Pages is configured from `/docs`.
 - Confirm issue templates are enabled.
 

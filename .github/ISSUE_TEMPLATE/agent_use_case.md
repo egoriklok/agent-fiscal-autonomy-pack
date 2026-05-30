@@ -1,26 +1,26 @@
 ---
-name: Buyer Agent Use Case
-about: Share a buyer-agent fiscal autonomy use case
-title: "Use case: <short name>"
+name: Agent Spend Surface Use Case
+about: Share a public or redacted MCP/API/agent-spend readiness use case
+title: "Use case: <capability or spend surface>"
 labels: use-case
 ---
 
-## Agent type
+## Capability surface
 
-## Monthly operating-cost target
+## Monetization or spend model
 
-## Intended use case
+## Current approval and limit policy
 
-## Current data/tooling
+## Current receipt or audit trail
 
-## Max loss or risk budget
+## Current revocation path
 
-## Desired proof report
+## Desired next safe threshold
 
 ## Safety-boundary acceptance
 
-- [ ] Research-only scope accepted.
-- [ ] No guaranteed profit accepted.
-- [ ] No direct live trading accepted.
+- [ ] No secrets, raw credentials, private keys, cookies, sessions, OAuth tokens, or API keys are included.
+- [ ] No custody, wallet signing, private dashboard access, or production system control is requested.
+- [ ] No financial/legal/tax/investment/compliance advice or guaranteed outcome is requested.
 
 ## What proof would make this useful?

@@ -20,10 +20,10 @@ Tactical memory is short-lived and expires unless it is used or promoted.
 Strategic memory stores durable product and market decisions:
 
 - agents buy machine-readable capabilities, not landing pages;
-- the public plugin is proof, not the paid package;
-- direct Base USDC remains the launch rail;
+- the public plugin is proof, not the paid report;
+- direct Base USDC remains the post-qualification launch rail;
 - x402 and marketplace compatibility are future tracks;
-- the product must not promise profit or live trading.
+- the product must not promise revenue, security, compliance, incident prevention, or live trading.
 
 Strategic memory changes only when new market evidence or buyer behavior justifies an update.
 
@@ -36,9 +36,9 @@ Private memory stays outside this repo:
 - buyer data;
 - invoices and transaction hashes;
 - entitlement records;
-- private Drive delivery links;
-- raw vault paths;
-- paid package files.
+- private delivery links;
+- raw private source paths;
+- paid report drafts and delivery artifacts.
 
 ## Automation policy
 

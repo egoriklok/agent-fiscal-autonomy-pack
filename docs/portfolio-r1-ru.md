@@ -1,116 +1,116 @@
 # Agent Fiscal Autonomy Pack - R1
 
-## Коротко
+## Short Version
 
-Я готовлю `Agent Fiscal Autonomy Pack` - продукт для аудита готовности цифровых сервисов принимать платежи от AI-агентов.
+I am building `Agent Fiscal Autonomy Pack`: a product for auditing whether digital services are ready to accept payments from AI agents.
 
-R1 проверяет, можно ли дать AI-агенту купить доступ, оплатить услугу и получить результат без доступа к приватным ключам, личным кабинетам, токенам и данным клиентов.
+R1 checks whether an AI agent can buy access, pay for a service, and receive the result without touching private keys, account dashboards, tokens, or customer data.
 
-Это страница для встройки в портфолио и резюме. Она показывает не подтвержденную выручку, а публичную работу над продуктом для экономики AI-агентов: репозиторий, CRM-воронку, ограничения безопасности, документы и проверяемые ссылки.
+This page is designed for embedding into a portfolio or resume verification section. It does not claim confirmed revenue. It shows public work on a product for the AI agent economy: repository, CRM workflow, safety boundaries, documentation, and verifiable links.
 
-## Что проверяет аудит
+## What The Audit Checks
 
-R1 смотрит на платежный путь глазами владельца бюджета:
+R1 looks at the payment path from the budget owner's point of view:
 
-- кто может разрешить оплату;
-- есть ли цена до действия;
-- где стоит лимит бюджета;
-- есть ли чек, квитанция или другой след оплаты;
-- можно ли проверить журнал действий;
-- можно ли отозвать или сузить доступ;
-- понятен ли результат после оплаты.
+- who can approve payment;
+- whether the price is visible before action;
+- where the budget limit is set;
+- whether there is a receipt, transaction, or other payment proof;
+- whether the action log can be checked later;
+- whether access can be revoked or narrowed;
+- whether the delivery result is clear.
 
-Главный вопрос: сервис готов к участию AI-агента в покупке или сначала нужно закрыть риски по деньгам, доступу и данным?
+The main question: is the service ready for AI-agent participation in a purchase, or should money, access, and data risks be fixed first?
 
-## Что получает клиент
+## What The Client Receives
 
-Формат маленький и проверяемый:
+The format is intentionally small and verifiable:
 
-- короткий аудит-отчет на человеческом языке;
-- `JSON`-резюме для CRM или агентной автоматизации;
-- карта прав: кто одобряет оплату, какие лимиты действуют, как отозвать доступ;
-- список пробелов: нет цены, нет чека, нет журнала, нет отзыва доступа или неясен результат;
-- следующий безопасный шаг.
+- a short human-readable audit report;
+- a `JSON` summary for CRM or agent automation;
+- an authority map: who approves payment, which limits apply, and how access can be revoked;
+- a gap list: missing price, missing receipt, missing audit trail, missing revocation path, or unclear delivery;
+- the next safe action.
 
-Платный вариант упакован как фиксированный аудит за `99 USDC/USDT`, но только после согласованного объема работы. До согласования счет и путь оплаты не открываются.
+The paid version is packaged as a fixed audit for `99 USDC/USDT`, but only after the work scope is accepted. Before scope acceptance, the invoice and payment path stay closed.
 
-## Как работает маршрут R1
+## How The R1 Flow Works
 
-1. Найти открытый сигнал: публичная страница, задача, документация или `API`, где видно, что сервис хочет принимать оплату или работать с агентами.
-2. Сделать короткую бесплатную проверку: что готово, что неясно и какой один вопрос нужно задать перед платной работой.
-3. Согласовать объем работы: что именно проверяется и какой результат нужен.
-4. Подтвердить оплату: только проверка поступления или статуса оплаты, без подписи транзакций и без права тратить средства.
-5. Передать результат: отчет, структурированное резюме, карта прав, список рисков и следующий безопасный шаг.
+1. Find a public signal: a public page, issue, documentation, or `API` where the service shows payment or agent-facing intent.
+2. Run a short free check: what is ready, what is unclear, and which one question should be answered before paid work.
+3. Accept the scope: define exactly what will be audited and what result is expected.
+4. Confirm payment: check receipt or payment status only, without transaction signing or spending authority.
+5. Deliver the result: report, structured summary, authority map, risk list, and the next safe action.
 
-## Для кого это
+## Who It Is For
 
-Аудит подходит сервисам, которые хотят безопасно открыть платный доступ для AI-агентов:
+The audit is for services that want to safely open paid access to AI agents:
 
-- платные `API` и инструменты;
-- MCP-сервисы;
-- x402-сценарии;
-- подписки и платные точки доступа;
-- GitHub-задачи и процессы с вознаграждением;
-- команды, которым важно не передавать агенту приватные ключи и кабинеты.
+- paid `API` services and tools;
+- MCP services;
+- x402 scenarios;
+- subscriptions and paid endpoints;
+- GitHub tasks and bounty processes;
+- teams that do not want to give agents private keys or account dashboards.
 
-## Границы безопасности
+## Safety Boundary
 
-Проект намеренно не делает следующие вещи:
+The project intentionally does not do the following:
 
-- не запрашивает seed phrase, private key, cookies, OAuth-токены, сессии или доступ к личным кабинетам;
-- не берет средства на хранение;
-- не получает право переводить, менять или тратить деньги клиента;
-- не продает обход KYC, регуляторных процедур или правил платформы;
-- не обещает гарантированную выручку, гарантированный платеж или юридический результат;
-- не считает ожидаемую сделку полученной выручкой.
+- it does not ask for seed phrases, private keys, cookies, OAuth tokens, sessions, or private dashboard access;
+- it does not take custody of funds;
+- it does not receive authority to transfer, swap, or spend client money;
+- it does not sell KYC bypass, compliance bypass, or platform rule bypass;
+- it does not promise guaranteed revenue, guaranteed payment, or legal outcomes;
+- it does not count expected deal value as received revenue.
 
-## Текущий R1 статус
+## Current R1 Status
 
-Подтвержденная выручка сейчас: `0 USDC`.
+Confirmed revenue right now: `0 USDC`.
 
-Это честный статус проекта. Очередь, кандидаты и готовность к обзору не считаются продажами до факта оплаты и переданного результата.
+That is an intentional honesty boundary. Queue size, candidates, and review readiness are not counted as sales until payment and delivery are both proven.
 
-Что уже собрано:
+What is already assembled:
 
-- `240` открытых источников просмотрено для поиска подходящих сервисов;
-- `50` кандидатов добавлено в очередь R1;
-- `4` задачи готовы к ручному обзору;
-- `0` внешних сообщений отправлено без проверки;
-- `0 USDC` подтвержденной полученной выручки.
+- `240` public sources scanned to find relevant services;
+- `50` candidates added to the R1 queue;
+- `4` items ready for manual review;
+- `0` external messages sent without review;
+- `0 USDC` confirmed received revenue.
 
-## Почему это сильный сигнал для резюме
+## Why This Is A Strong Resume Signal
 
-Проект показывает не очередную AI-обертку, а работу над коммерческой инфраструктурой для AI-агентов:
+The project shows work on commercial infrastructure for AI agents, not just another AI wrapper:
 
-- умею оформлять технический проект так, чтобы его можно было проверить публично;
-- строю CRM-логику: статусы, очередь, ограничения и следующий шаг;
-- разделяю прототип, гипотезу, сделку и подтвержденную выручку;
-- работаю с GitHub, PR, JSON/MD-артефактами и публичными ссылками;
-- пишу продуктовый текст без завышенных обещаний и неподтвержденных метрик.
+- I can package a technical project so it can be checked publicly;
+- I build CRM logic: statuses, queues, constraints, and next actions;
+- I separate prototype, hypothesis, deal pipeline, and confirmed revenue;
+- I work with GitHub, PRs, JSON/MD artifacts, and public verification links;
+- I write product positioning without inflated claims or unverified metrics.
 
-Формулировка для резюме:
+Resume wording:
 
-> Готовлю Agent Fiscal Autonomy Pack - аудит готовности цифровых сервисов к безопасному приему платежей от AI-агентов. Проект проверяет цену, лимиты бюджета, подтверждение оплаты, журнал действий, отзыв доступа и передачу результата без доступа к приватным ключам.
+> I am building Agent Fiscal Autonomy Pack, a payment readiness audit for digital services preparing to accept payments from AI agents. The project checks pricing, budget limits, receipt proof, audit trail, access revocation, and delivery handoff without access to private keys.
 
-## Публичные ссылки
+## Public Links
 
-- Репозиторий: <https://github.com/egoriklok/agent-fiscal-autonomy-pack>
+- Repository: <https://github.com/egoriklok/agent-fiscal-autonomy-pack>
 - GitHub Pages home: <https://egoriklok.github.io/agent-fiscal-autonomy-pack/>
 - README: <https://github.com/egoriklok/agent-fiscal-autonomy-pack/blob/main/README.md>
-- План развития: <https://github.com/egoriklok/agent-fiscal-autonomy-pack/blob/main/ROADMAP.md>
-- Одностраничное предложение: <https://github.com/egoriklok/agent-fiscal-autonomy-pack/blob/main/docs/one-page-offer.md>
+- Roadmap: <https://github.com/egoriklok/agent-fiscal-autonomy-pack/blob/main/ROADMAP.md>
+- One-page offer: <https://github.com/egoriklok/agent-fiscal-autonomy-pack/blob/main/docs/one-page-offer.md>
 - Retention trigger map: <https://github.com/egoriklok/agent-fiscal-autonomy-pack/blob/main/docs/retention-trigger-map.md>
-- Слитый PR #1: <https://github.com/egoriklok/agent-fiscal-autonomy-pack/pull/1>
-- Текущий PR #2: <https://github.com/egoriklok/agent-fiscal-autonomy-pack/pull/2>
+- Merged PR #1: <https://github.com/egoriklok/agent-fiscal-autonomy-pack/pull/1>
+- Current PR #2: <https://github.com/egoriklok/agent-fiscal-autonomy-pack/pull/2>
 
-## Ссылка для встройки после merge
+## Embed Link After Merge
 
 ```text
 https://egoriklok.github.io/agent-fiscal-autonomy-pack/portfolio-r1-ru.html
 ```
 
-Рекомендуемый короткий текст ссылки:
+Recommended anchor text:
 
 ```text
-Agent Fiscal Autonomy Pack - аудит готовности к платежам от AI-агентов
+Agent Fiscal Autonomy Pack - payment readiness audit for AI-agent commerce
 ```

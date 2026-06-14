@@ -499,6 +499,13 @@
 
     .table-row b { display: block; font-size: 13px; }
     .table-row small { display: block; color: var(--muted); font-size: 12px; line-height: 1.35; }
+    .table-row > div,
+    .table-row b,
+    .table-row small {
+      min-width: 0;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
 
     .quote-card {
       border-left: 4px solid var(--primary);

@@ -16,6 +16,8 @@ Payment: Base USDC after qualification and explicit scope acceptance. No payment
 
 Safety: no custody, no wallet signing, no secrets, no private dashboard access, no financial advice, no guaranteed outcome.
 
+- [R1 portfolio product page RU](portfolio-r1-ru.html)
+- [R1 portfolio text page RU](portfolio-r1-ru.md)
 - [One-page offer](one-page-offer.md)
 - [Public plugin wrapper](plugin-wrapper.md)
 - [Retention trigger map](retention-trigger-map.md)

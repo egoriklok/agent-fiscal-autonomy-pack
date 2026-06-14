@@ -1,0 +1,889 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent Fiscal Autonomy Pack - R1 payment readiness audit</title>
+  <meta name="description" content="Portfolio product page for Agent Fiscal Autonomy Pack: an R1 audit for services preparing to accept payments from AI agents safely.">
+  <style>
+    :root {
+      --background: #fffdf7;
+      --surface: #ffffff;
+      --surface-soft: #f6f4eb;
+      --foreground: #17221d;
+      --muted: #65726a;
+      --primary: #2f7a4f;
+      --primary-deep: #21563b;
+      --primary-soft: #edf6ef;
+      --accent: #e8a83f;
+      --border: #e4decf;
+      --danger: #9d2f2f;
+      --shadow: 0 1px 3px rgba(23, 34, 29, 0.10), 0 1px 2px rgba(23, 34, 29, 0.06);
+      --radius: 8px;
+      --container: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: linear-gradient(#fffdf7, #f6f4eb 54%, #fffdf7);
+      color: var(--foreground);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      font-feature-settings: "tnum" 1;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .shell { min-height: 100vh; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(228, 222, 207, 0.86);
+      background: rgba(255, 253, 247, 0.95);
+      backdrop-filter: blur(8px);
+    }
+
+    .topbar-inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      font-weight: 700;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      display: grid;
+      place-items: center;
+      background: var(--primary);
+      color: #fff;
+      font-size: 13px;
+      letter-spacing: 0;
+    }
+
+    .brand-subtitle {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: 1px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .nav a:hover { color: var(--foreground); }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 38px;
+      padding: 0 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface);
+      color: var(--foreground);
+      font-size: 14px;
+      font-weight: 650;
+      box-shadow: none;
+    }
+
+    .button.primary {
+      border-color: var(--primary);
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .button.small {
+      min-height: 34px;
+      padding: 0 10px;
+      font-size: 12px;
+    }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .hero {
+      padding: 82px 0 54px;
+    }
+
+    .kicker {
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    h1 {
+      max-width: 920px;
+      margin: 14px 0 0;
+      font-size: clamp(42px, 6vw, 74px);
+      line-height: 0.98;
+      letter-spacing: 0;
+      font-weight: 760;
+    }
+
+    .hero-copy {
+      max-width: 800px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: clamp(18px, 2.1vw, 24px);
+      line-height: 1.5;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .hero-note {
+      max-width: 780px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .kpi-strip {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 38px;
+    }
+
+    .kpi-card,
+    .card,
+    .panel,
+    .table-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .kpi-card {
+      min-width: 0;
+      padding: 14px;
+    }
+
+    .kpi-card.status {
+      border-color: rgba(47, 122, 79, 0.32);
+      background: #f7fbf7;
+    }
+
+    .kpi-label,
+    .dense-label {
+      display: block;
+      color: var(--muted);
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .kpi-value {
+      display: block;
+      margin-top: 8px;
+      font-size: 29px;
+      line-height: 1;
+      font-weight: 760;
+    }
+
+    .kpi-note {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .section {
+      padding: 52px 0;
+      border-top: 1px solid rgba(228, 222, 207, 0.70);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(250px, 360px);
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      max-width: 850px;
+      margin: 8px 0 0;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1.06;
+      letter-spacing: 0;
+      font-weight: 760;
+    }
+
+    .section-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .grid-3,
+    .grid-4,
+    .grid-2 {
+      display: grid;
+      gap: 12px;
+    }
+
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .card { padding: 18px; min-width: 0; }
+
+    .card h3 {
+      margin: 10px 0 0;
+      font-size: 17px;
+      line-height: 1.25;
+      font-weight: 720;
+    }
+
+    .card p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.48;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 24px;
+      padding: 3px 8px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--background);
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .badge.primary {
+      border-color: rgba(47, 122, 79, 0.28);
+      color: var(--primary);
+      background: var(--primary-soft);
+    }
+
+    .badge.warn {
+      border-color: rgba(232, 168, 63, 0.45);
+      color: #7d5718;
+      background: #fff7e4;
+    }
+
+    .crm-demo {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    .panel { padding: 16px; }
+
+    .panel-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .panel-title h3 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.2;
+      font-weight: 760;
+    }
+
+    .pipeline {
+      display: grid;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .pipeline-row {
+      display: grid;
+      grid-template-columns: 40px minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      background: var(--background);
+    }
+
+    .step-index {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 6px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    .pipeline-row strong {
+      display: block;
+      font-size: 14px;
+      line-height: 1.25;
+    }
+
+    .pipeline-row span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+      margin-top: 2px;
+    }
+
+    .status-pill {
+      white-space: nowrap;
+      border: 1px solid rgba(47, 122, 79, 0.28);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--primary);
+      padding: 5px 8px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .truth-panel {
+      background: #17221d;
+      color: #fffdf7;
+      border-color: #17221d;
+    }
+
+    .truth-panel .dense-label,
+    .truth-panel p,
+    .truth-panel small { color: rgba(255, 253, 247, 0.72); }
+
+    .truth-number {
+      display: block;
+      margin-top: 10px;
+      font-size: 56px;
+      line-height: 0.95;
+      font-weight: 780;
+    }
+
+    .truth-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .truth-grid div {
+      min-width: 0;
+      border: 1px solid rgba(255, 253, 247, 0.16);
+      border-radius: 7px;
+      padding: 10px;
+      background: rgba(255, 253, 247, 0.06);
+    }
+
+    .truth-grid b {
+      display: block;
+      font-size: 18px;
+      line-height: 1.05;
+    }
+
+    .truth-grid small {
+      display: block;
+      margin-top: 5px;
+      font-size: 12px;
+      line-height: 1.25;
+    }
+
+    .tab-rail {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 12px;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: var(--shadow);
+    }
+
+    .tab {
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 12px;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      background: rgba(246, 244, 235, 0.80);
+      color: var(--foreground);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .tab.active {
+      border-color: rgba(47, 122, 79, 0.32);
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .table-card { overflow: hidden; }
+
+    .table-row {
+      display: grid;
+      grid-template-columns: minmax(160px, 1.1fr) minmax(160px, 1fr) minmax(120px, 0.65fr) minmax(180px, 1.25fr);
+      gap: 10px;
+      padding: 12px 14px;
+      border-top: 1px solid var(--border);
+      align-items: start;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .table-row:first-child {
+      border-top: 0;
+      background: var(--surface-soft);
+      color: var(--muted);
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .table-row b { display: block; font-size: 13px; }
+    .table-row small { display: block; color: var(--muted); font-size: 12px; line-height: 1.35; }
+    .table-row > div,
+    .table-row b,
+    .table-row small {
+      min-width: 0;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .quote-card {
+      border-left: 4px solid var(--primary);
+      padding: 16px 18px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      box-shadow: var(--shadow);
+    }
+
+    .quote-card p {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.48;
+    }
+
+    .footer {
+      padding: 34px 0 42px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .nav { display: none; }
+      .hero { padding-top: 54px; }
+      .kpi-strip,
+      .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid-3,
+      .grid-2,
+      .crm-demo,
+      .section-head { grid-template-columns: 1fr; }
+      .table-row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 620px) {
+      .topbar-inner,
+      .container,
+      .footer-inner { padding-left: 16px; padding-right: 16px; }
+      h1 { font-size: 40px; }
+      .hero-copy { font-size: 17px; line-height: 1.55; }
+      .kpi-strip,
+      .grid-4 { grid-template-columns: 1fr; }
+      .button { width: 100%; }
+      .brand-subtitle { display: none; }
+      .pipeline-row { grid-template-columns: 34px minmax(0, 1fr); }
+      .pipeline-row .status-pill { grid-column: 2; width: fit-content; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="#top" aria-label="Agent Fiscal Autonomy Pack">
+          <span class="brand-mark">R1</span>
+          <span>
+            Agent Fiscal Autonomy Pack
+            <span class="brand-subtitle">payment readiness audit</span>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Page navigation">
+          <a href="#check">Audit scope</a>
+          <a href="#result">Deliverables</a>
+          <a href="#flow">R1 flow</a>
+          <a href="#status">Status</a>
+          <a href="#links">Links</a>
+        </nav>
+        <a class="button primary small" href="https://github.com/egoriklok/agent-fiscal-autonomy-pack">Repository</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container">
+          <div class="kicker">R1 / portfolio product page</div>
+          <h1>Payment readiness audit for services selling to AI agents</h1>
+          <p class="hero-copy">Agent Fiscal Autonomy Pack checks whether an AI agent can buy access, pay for a service, and receive the result without touching private keys, account dashboards, tokens, or customer data.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://github.com/egoriklok/agent-fiscal-autonomy-pack">Open GitHub</a>
+            <a class="button" href="https://github.com/egoriklok/agent-fiscal-autonomy-pack/blob/main/README.md">README</a>
+            <a class="button" href="https://github.com/egoriklok/agent-fiscal-autonomy-pack/pull/2">Open PR #2</a>
+            <a class="button" href="portfolio-r1-ru.md">Text version</a>
+          </div>
+          <p class="hero-note">Resume positioning: this is a public product project for the AI agent economy. I do not claim confirmed revenue; the page shows product preparation through GitHub artifacts, safety boundaries, and a clear R1 workflow.</p>
+
+          <div class="kpi-strip">
+            <div class="kpi-card status">
+              <span class="kpi-label">Price and terms</span>
+              <span class="kpi-value">1</span>
+              <span class="kpi-note">clear paid step before agent participation</span>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-label">Budget limit</span>
+              <span class="kpi-value">2</span>
+              <span class="kpi-note">who approves payment and where it stops</span>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-label">Receipt</span>
+              <span class="kpi-value">3</span>
+              <span class="kpi-note">payment proof without exposing secrets</span>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-label">Audit trail</span>
+              <span class="kpi-value">4</span>
+              <span class="kpi-note">whether actions can be checked later</span>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-label">Revocation</span>
+              <span class="kpi-value">5</span>
+              <span class="kpi-note">how to stop or narrow agent access</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="check">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="kicker">What the product checks</div>
+              <h2>R1 looks at the payment path from the budget owner's point of view</h2>
+            </div>
+            <p class="section-copy">The goal is not to “give the agent a wallet.” The goal is to know where a service is already safe for paid agent use and where money, access, or data are still at risk.</p>
+          </div>
+
+          <div class="grid-3">
+            <article class="card">
+              <span class="badge primary">Access</span>
+              <h3>Who can approve payment</h3>
+              <p>The audit checks whether there is a clear rule for approval, budget limits, human escalation, and actions the agent must not perform alone.</p>
+            </article>
+            <article class="card">
+              <span class="badge primary">Money</span>
+              <h3>Price, limit, and stop condition</h3>
+              <p>The service should expose the price before action, a spending limit, and a way to stop a purchase before charging or renewing access.</p>
+            </article>
+            <article class="card">
+              <span class="badge primary">Proof</span>
+              <h3>Receipt, status page, or transaction</h3>
+              <p>After payment, there should be a verifiable trace: a receipt, status page, public transaction, or another proof that does not expose private data.</p>
+            </article>
+            <article class="card">
+              <span class="badge">Log</span>
+              <h3>What can be checked later</h3>
+              <p>The report records key events: who requested the action, what was paid for, what result was delivered, and where the proof lives.</p>
+            </article>
+            <article class="card">
+              <span class="badge">Revoke</span>
+              <h3>How access can be removed or narrowed</h3>
+              <p>The audit checks whether tokens can be disabled, limits lowered, keys rotated, access closed, or recurring charges stopped.</p>
+            </article>
+            <article class="card">
+              <span class="badge">Result</span>
+              <h3>What the buyer receives</h3>
+              <p>The delivery is not just “payment succeeded.” It should be a report, link, PR, file, access grant, or another artifact that can be checked.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="result">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="kicker">What the client receives</div>
+              <h2>A short audit, not access to private systems</h2>
+            </div>
+            <p class="section-copy">R1 is intentionally small and verifiable: a human-readable report, a structured automation summary, an authority map, and a practical gap list.</p>
+          </div>
+
+          <div class="grid-4">
+            <article class="card">
+              <span class="dense-label">01</span>
+              <h3>Audit report</h3>
+              <p>A short document showing what is ready, where the risk is, what to fix first, and which step can safely involve an agent.</p>
+            </article>
+            <article class="card">
+              <span class="dense-label">02</span>
+              <h3>JSON summary</h3>
+              <p>A structured result for a CRM or agent layer: status, risks, links, and the next allowed step.</p>
+            </article>
+            <article class="card">
+              <span class="dense-label">03</span>
+              <h3>Authority map</h3>
+              <p>Who approves payment, which limits apply, what data the agent sees, and how quickly access can be revoked.</p>
+            </article>
+            <article class="card">
+              <span class="dense-label">04</span>
+              <h3>Gap list</h3>
+              <p>A practical list: missing price, missing receipt, unclear limit, missing log, weak revocation, or unverified delivery.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="flow">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="kicker">R1 flow</div>
+              <h2>From public signal to verifiable delivery</h2>
+            </div>
+            <p class="section-copy">The workflow is shaped as a CRM process: public evidence and free value first, accepted scope next, payment and delivery only after that.</p>
+          </div>
+
+          <div class="crm-demo">
+            <div class="panel">
+              <div class="panel-title">
+                <div>
+                  <span class="dense-label">R1 route</span>
+                  <h3>How a service passes the audit</h3>
+                </div>
+                <span class="badge primary">no secrets</span>
+              </div>
+              <div class="pipeline">
+                <div class="pipeline-row">
+                  <span class="step-index">1</span>
+                  <div><strong>Find a public signal</strong><span>A public page, issue, documentation, or API where the service shows payment or agent-facing intent.</span></div>
+                  <span class="status-pill">public</span>
+                </div>
+                <div class="pipeline-row">
+                  <span class="step-index">2</span>
+                  <div><strong>Run a short check</strong><span>What is ready, what is unclear, and which one question should be answered before paid work.</span></div>
+                  <span class="status-pill">free</span>
+                </div>
+                <div class="pipeline-row">
+                  <span class="step-index">3</span>
+                  <div><strong>Accept the scope</strong><span>Until the scope is accepted, no invoice or payment path is opened.</span></div>
+                  <span class="status-pill">required</span>
+                </div>
+                <div class="pipeline-row">
+                  <span class="step-index">4</span>
+                  <div><strong>Confirm payment</strong><span>Payment status is checked in read-only mode, without transaction signing or spending authority.</span></div>
+                  <span class="status-pill">read-only</span>
+                </div>
+                <div class="pipeline-row">
+                  <span class="step-index">5</span>
+                  <div><strong>Deliver the result</strong><span>Report, structured summary, authority map, risk list, and the next safe action.</span></div>
+                  <span class="status-pill">artifact</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel truth-panel">
+              <span class="dense-label">Current honest status</span>
+              <span class="truth-number">0 USDC</span>
+              <p>Confirmed revenue is currently zero. Queue size, candidates, and review readiness are not counted as sales until payment and delivery are both proven.</p>
+              <div class="truth-grid">
+                <div><b>240</b><small>public sources scanned</small></div>
+                <div><b>50</b><small>candidates in the R1 queue</small></div>
+                <div><b>4</b><small>items ready for review</small></div>
+                <div><b>0</b><small>external messages sent</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="offer">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="kicker">Who it is for</div>
+              <h2>For services that want to sell access to AI agents</h2>
+            </div>
+            <p class="section-copy">The technical context can vary: MCP, API, x402, paid tools, subscriptions, GitHub work, or any service where an AI agent needs to safely buy an action.</p>
+          </div>
+
+          <div class="grid-2">
+            <div class="panel">
+              <div class="panel-title">
+                <div>
+                  <span class="dense-label">Small paid scope</span>
+                  <h3>Fixed audit for 99 USDC/USDT</h3>
+                </div>
+                <span class="badge warn">after scope</span>
+              </div>
+              <div class="pipeline">
+                <div class="pipeline-row"><span class="step-index">A</span><div><strong>Free check first</strong><span>One concrete risk or question is shown from public evidence.</span></div><span class="status-pill">free</span></div>
+                <div class="pipeline-row"><span class="step-index">B</span><div><strong>Scope next</strong><span>The exact audit target and expected result are agreed first.</span></div><span class="status-pill">scope</span></div>
+                <div class="pipeline-row"><span class="step-index">C</span><div><strong>Payment after that</strong><span>The payment path opens only after the work scope is accepted.</span></div><span class="status-pill">99</span></div>
+                <div class="pipeline-row"><span class="step-index">D</span><div><strong>Report delivery</strong><span>Audit report, JSON summary, authority map, and gap list are delivered.</span></div><span class="status-pill">R1</span></div>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-title">
+                <div>
+                  <span class="dense-label">Safety boundary</span>
+                  <h3>What the project does not do</h3>
+                </div>
+                <span class="badge primary">no custody</span>
+              </div>
+              <div class="grid-2" style="margin-top:12px">
+                <div class="card"><span class="dense-label">Blocked</span><h3>Private keys</h3><p>No seed phrase, private key, session, cookie, OAuth token, or private dashboard access is requested.</p></div>
+                <div class="card"><span class="dense-label">Blocked</span><h3>Custody</h3><p>The project does not hold funds and does not receive authority to transfer, swap, or spend client money.</p></div>
+                <div class="card"><span class="dense-label">Blocked</span><h3>Rule bypass</h3><p>It does not sell KYC bypass, compliance bypass, platform rule bypass, or legal guarantees.</p></div>
+                <div class="card"><span class="dense-label">Blocked</span><h3>Revenue inflation</h3><p>Expected deal value is not received revenue. A sale counts only after payment and delivery.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="status">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="kicker">Current R1 status</div>
+              <h2>What has already been assembled in the public project</h2>
+            </div>
+            <p class="section-copy">These numbers describe work status, not sales claims. They show that the project is shaped as a CRM workflow and is preparing for a verifiable first paid case.</p>
+          </div>
+
+          <div class="kpi-strip">
+            <div class="kpi-card status"><span class="kpi-label">Public sources</span><span class="kpi-value">240</span><span class="kpi-note">scanned to find relevant services</span></div>
+            <div class="kpi-card"><span class="kpi-label">R1 queue</span><span class="kpi-value">50</span><span class="kpi-note">candidates for short checks</span></div>
+            <div class="kpi-card"><span class="kpi-label">Review-ready</span><span class="kpi-value">4</span><span class="kpi-note">items need manual confirmation</span></div>
+            <div class="kpi-card"><span class="kpi-label">Received revenue</span><span class="kpi-value">0</span><span class="kpi-note">USDC at this stage</span></div>
+            <div class="kpi-card"><span class="kpi-label">External sends</span><span class="kpi-value">0</span><span class="kpi-note">nothing is posted without review</span></div>
+          </div>
+
+          <div style="height:18px"></div>
+          <div class="table-card">
+            <div class="table-row"><div>Artifact</div><div>What it proves</div><div>Metric</div><div>Next step</div></div>
+            <div class="table-row"><div><b>Public source set</b><small>GitHub data and R1 queue</small></div><div>There is a verifiable base for finding services that may need the audit.</div><div>240 scanned / 50 selected</div><div>Keep the list fresh and do not post messages without manual review.</div></div>
+            <div class="table-row"><div><b>R1 CRM funnel</b><small>candidates, statuses, constraints</small></div><div>The work is organized as a process from signal to result, not as a one-off note.</div><div>50 rows in queue</div><div>Pick safe targets for the first external contact.</div></div>
+            <div class="table-row"><div><b>Payment path</b><small>receipt confirmation only</small></div><div>Payment is checked without transaction signing, spending authority, or custody.</div><div>0 received / 0 sent</div><div>Connect future payment proof to a specific CRM row and delivered result.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="links">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="kicker">Resume links</div>
+              <h2>Public proof links for the Verification section</h2>
+            </div>
+            <p class="section-copy">For the portfolio, public links matter most: repository, documentation, roadmap, offer, retention map, and pull requests.</p>
+          </div>
+
+          <div class="table-card">
+            <div class="table-row"><div>Open</div><div>Link</div><div>Why it matters</div><div>Status</div></div>
+            <div class="table-row"><div><b>Repository</b><small>main public surface</small></div><div><a href="https://github.com/egoriklok/agent-fiscal-autonomy-pack">github.com/egoriklok/agent-fiscal-autonomy-pack</a></div><div>Shows code, docs, and project history.</div><div>public</div></div>
+            <div class="table-row"><div><b>GitHub Pages</b><small>page after merge</small></div><div><a href="https://egoriklok.github.io/agent-fiscal-autonomy-pack/portfolio-r1-ru.html">portfolio-r1-ru.html</a></div><div>Ready-to-embed resume link.</div><div>after merge</div></div>
+            <div class="table-row"><div><b>README and roadmap</b><small>product context</small></div><div><a href="https://github.com/egoriklok/agent-fiscal-autonomy-pack/blob/main/README.md">README</a> / <a href="https://github.com/egoriklok/agent-fiscal-autonomy-pack/blob/main/ROADMAP.md">Roadmap</a></div><div>Explain architecture, constraints, and next stages.</div><div>public</div></div>
+            <div class="table-row"><div><b>Offer and retention</b><small>product packaging</small></div><div><a href="https://github.com/egoriklok/agent-fiscal-autonomy-pack/blob/main/docs/one-page-offer.md">One-page offer</a> / <a href="https://github.com/egoriklok/agent-fiscal-autonomy-pack/blob/main/docs/retention-trigger-map.md">Retention map</a></div><div>Show how the audit becomes a clear offer.</div><div>public</div></div>
+            <div class="table-row"><div><b>Pull requests</b><small>change history</small></div><div><a href="https://github.com/egoriklok/agent-fiscal-autonomy-pack/pull/1">PR #1</a> / <a href="https://github.com/egoriklok/agent-fiscal-autonomy-pack/pull/2">PR #2</a></div><div>Show verifiable work on the project.</div><div>review</div></div>
+          </div>
+
+          <div style="height:18px"></div>
+          <div class="quote-card">
+            <p>Resume wording: I am building Agent Fiscal Autonomy Pack, a payment readiness audit for digital services preparing to accept payments from AI agents. The project checks pricing, budget limits, receipt proof, audit trail, access revocation, and delivery handoff without access to private keys.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <span>Agent Fiscal Autonomy Pack / R1 portfolio page</span>
+        <span>Confirmed revenue is not claimed until payment and delivery are both proven.</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

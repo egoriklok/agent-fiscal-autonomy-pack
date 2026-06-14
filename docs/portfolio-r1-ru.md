@@ -1,123 +1,116 @@
-# Agent Fiscal Autonomy Pack — R1 portfolio page
+# Agent Fiscal Autonomy Pack - R1
 
-**Коротко для портфолио:** я строю `Agent Fiscal Autonomy Pack` — proof-layer для AI agency economy, где AI-агенты, MCP/API-сервисы и публичные bounty/project surfaces проходят безопасную воронку: public discovery -> no-secret snapshot -> scope acceptance -> receive-only payout proof -> verified delivery.
+## Коротко
 
-Эта страница сделана как русскоязычная витрина проекта для раздела `Verification` в портфолио. Она показывает не обещание дохода, а реальную продуктовую систему: публичный репозиторий, CJM, CRM-воронку, safety-gates, rail-aware scoring и честное разделение pipeline value от подтвержденной выручки.
+Я готовлю `Agent Fiscal Autonomy Pack` - продукт для аудита готовности цифровых сервисов принимать платежи от AI-агентов.
 
-## Что это за проект
+R1 проверяет, можно ли дать AI-агенту купить доступ, оплатить услугу и получить результат без доступа к приватным ключам, личным кабинетам, токенам и данным клиентов.
 
-`Agent Fiscal Autonomy Pack` — публичный набор артефактов для аудита готовности сервисов к агентской коммерции. Целевая поверхность: payable MCP/API-сервисы, x402-adjacent продукты, browser/action-инструменты, agent-payment rails и команды, которые хотят безопасно открыть платный доступ для AI buyer-agents.
+Это страница для встройки в портфолио и резюме. Она показывает не подтвержденную выручку, а публичную работу над продуктом для экономики AI-агентов: репозиторий, CRM-воронку, ограничения безопасности, документы и проверяемые ссылки.
 
-Главная идея: прежде чем AI-агент сможет покупать, оплачивать или запускать агентный сервис, нужно проверить не “может ли он заплатить”, а “можно ли это сделать без потери контроля”. Проект формализует эти вопросы в воронку, чеклисты и machine-readable доказательства.
+## Что проверяет аудит
 
-## Почему это важно для AI agency economy
+R1 смотрит на платежный путь глазами владельца бюджета:
 
-AI agency economy требует не только агентов, которые пишут код или ищут лиды. Нужен слой доверия между агентом-покупателем, сервисом-продавцом и человеком-владельцем бюджета. Этот проект строит именно такой слой:
+- кто может разрешить оплату;
+- есть ли цена до действия;
+- где стоит лимит бюджета;
+- есть ли чек, квитанция или другой след оплаты;
+- можно ли проверить журнал действий;
+- можно ли отозвать или сузить доступ;
+- понятен ли результат после оплаты.
 
-- проверка authority boundaries: кто может одобрить действие и где лимит;
-- spend caps и escalation thresholds до оплаты;
-- receipt, settlement и audit-trail evidence после действия;
-- revocation path, key rotation и access reduction;
-- доказуемая доставка через PR, тесты, отчет, JSON summary и ссылку на proof artifact;
-- receive-only Base USDC / payout proof без wallet signing, custody, swap, bridge или transfer со стороны агента.
+Главный вопрос: сервис готов к участию AI-агента в покупке или сначала нужно закрыть риски по деньгам, доступу и данным?
 
-## Текущий продуктовый контур
+## Что получает клиент
 
-Бесплатный вход — `public/no-payment readiness snapshot` на основе открытых доказательств. Он не является invoice, payment request или paid delivery.
+Формат маленький и проверяемый:
 
-Платный вход — fixed-scope readiness review за `99 USDC/USDT` только после explicit `scope_acceptance=true`. До принятого scope payment route закрыт.
+- короткий аудит-отчет на человеческом языке;
+- `JSON`-резюме для CRM или агентной автоматизации;
+- карта прав: кто одобряет оплату, какие лимиты действуют, как отозвать доступ;
+- список пробелов: нет цены, нет чека, нет журнала, нет отзыва доступа или неясен результат;
+- следующий безопасный шаг.
 
-Основные deliverables paid review:
+Платный вариант упакован как фиксированный аудит за `99 USDC/USDT`, но только после согласованного объема работы. До согласования счет и путь оплаты не открываются.
 
-- human-readable audit report;
-- machine-readable JSON summary;
-- authority map;
-- pricing, receipt, audit-trail and revocation gap list;
-- next safe threshold recommendation.
+## Как работает маршрут R1
 
-## Как работает воронка R1
+1. Найти открытый сигнал: публичная страница, задача, документация или `API`, где видно, что сервис хочет принимать оплату или работать с агентами.
+2. Сделать короткую бесплатную проверку: что готово, что неясно и какой один вопрос нужно задать перед платной работой.
+3. Согласовать объем работы: что именно проверяется и какой результат нужен.
+4. Подтвердить оплату: только проверка поступления или статуса оплаты, без подписи транзакций и без права тратить средства.
+5. Передать результат: отчет, структурированное резюме, карта прав, список рисков и следующий безопасный шаг.
 
-1. `Public discovery`: анализируются публичные GitHub issues, bounty surfaces, MCP/API/x402/payment-related контексты.
-2. `Free snapshot`: создается короткий no-secret readiness snapshot: Ready / Partial / Blocked, blind spots и один точный next scope question.
-3. `Scope acceptance`: клиент или maintainer подтверждает конкретный paid scope. Без этого invoice/payment request запрещен.
-4. `Payment proof`: используется receive-only Base USDC или другой публичный payout rail. Агент не получает доступ к seed/private key и не может подписывать или тратить средства.
-5. `Delivery`: результат закрывается доказуемым пакетом: PR/result, tests/build proof, summary, proof artifacts, next improvement suggestion.
-6. `Retention`: повторная продажа возможна только по событию: новый paid endpoint, новый rail, изменение policy, revocation/receipt gap, incident или новый accepted scope.
+## Для кого это
 
-## Что уже собрано
+Аудит подходит сервисам, которые хотят безопасно открыть платный доступ для AI-агентов:
 
-По актуальной R1/CJM-таблице от `2026-05-31`:
+- платные `API` и инструменты;
+- MCP-сервисы;
+- x402-сценарии;
+- подписки и платные точки доступа;
+- GitHub-задачи и процессы с вознаграждением;
+- команды, которым важно не передавать агенту приватные ключи и кабинеты.
 
-- публичный repo `agent-fiscal-autonomy-pack` выровнен с R1 CJM через merged PR #1;
-- CRM pipeline живой: `4 tracked bounty deals`, `4 review-ready`, но `0 verified received USDC`;
-- public acquisition scan: `54 raw issues`, `30 evaluated`, `0 eligible safe comment targets`, `0 comments posted`;
-- R1 source pack: `240 public repos scanned`, `50 selected`, `50 candidate rows`, `50 CRM rows`, `50 qualification rows`;
-- R1 CRM queue: target `50` уже достигнут как readiness artifact;
-- revenue automation lane проходит безопасный цикл: discovery -> queue proof -> CRM -> payout envelope -> wallet watch;
-- wallet watch и payment envelope работают в read-only / receive-only режиме: `no signing`, `no spend`.
-
-## Честный статус
-
-Подтвержденная выручка сейчас: `0 USDC`.
-
-Это принципиально важно для портфолио: проект показывает работу над реальной инфраструктурой AI agency economy, но не заявляет продажи, revenue или payout до факта. Expected pipeline value не равен received revenue. Revenue признается только после public tx/platform proof и delivered artifact.
-
-## Что считается успехом следующего этапа
-
-Ближайший gate: довести R1 queue и public targets до состояния, где есть validator-green candidates, безопасный public send, принятый scope, затем payment proof и delivery artifact.
-
-Минимальный business success:
-
-- `scope_acceptance_status = accepted` для одного qualified candidate;
-- `payment_status = verified` по public tx/platform proof;
-- `recognized_revenue_usdc = 99` только после delivery artifact.
-
-## Safety boundary
+## Границы безопасности
 
 Проект намеренно не делает следующие вещи:
 
-- не продает KYC-bypass;
-- не берет custody;
-- не делает wallet signing;
-- не выполняет paid calls до scope acceptance;
-- не запрашивает private dashboards, API keys, cookies, sessions, OAuth tokens, private customer data или raw credentials;
-- не обещает guaranteed revenue, guaranteed payout, legal/compliance outcome или финансовый результат.
+- не запрашивает seed phrase, private key, cookies, OAuth-токены, сессии или доступ к личным кабинетам;
+- не берет средства на хранение;
+- не получает право переводить, менять или тратить деньги клиента;
+- не продает обход KYC, регуляторных процедур или правил платформы;
+- не обещает гарантированную выручку, гарантированный платеж или юридический результат;
+- не считает ожидаемую сделку полученной выручкой.
 
-## Почему это сильный portfolio signal
+## Текущий R1 статус
 
-Этот проект демонстрирует работу не над абстрактным “AI wrapper”, а над коммерческой инфраструктурой для агентных систем:
+Подтвержденная выручка сейчас: `0 USDC`.
 
-- продуктовая воронка сформулирована как доказуемый процесс;
-- агентная автоматизация ограничена safety-gates;
-- GitHub repo используется как public trust surface;
-- paid route закрыт до квалификации;
-- revenue truth отделен от pipeline optimism;
-- delivery описана через проверяемые artifacts, а не через обещания.
+Это честный статус проекта. Очередь, кандидаты и готовность к обзору не считаются продажами до факта оплаты и переданного результата.
 
-Для раздела портфолио это можно формулировать так:
+Что уже собрано:
 
-> Работаю над Agent Fiscal Autonomy Pack — proof-layer для AI agency economy: безопасная CRM-воронка, no-secret readiness snapshots, receive-only Base USDC payout proof, rail-aware scoring и delivery artifacts для agent-facing MCP/API/x402 сервисов.
+- `240` открытых источников просмотрено для поиска подходящих сервисов;
+- `50` кандидатов добавлено в очередь R1;
+- `4` задачи готовы к ручному обзору;
+- `0` внешних сообщений отправлено без проверки;
+- `0 USDC` подтвержденной полученной выручки.
 
-## Verification links
+## Почему это сильный сигнал для резюме
 
-- Public repo: <https://github.com/egoriklok/agent-fiscal-autonomy-pack>
+Проект показывает не очередную AI-обертку, а работу над коммерческой инфраструктурой для AI-агентов:
+
+- умею оформлять технический проект так, чтобы его можно было проверить публично;
+- строю CRM-логику: статусы, очередь, ограничения и следующий шаг;
+- разделяю прототип, гипотезу, сделку и подтвержденную выручку;
+- работаю с GitHub, PR, JSON/MD-артефактами и публичными ссылками;
+- пишу продуктовый текст без завышенных обещаний и неподтвержденных метрик.
+
+Формулировка для резюме:
+
+> Готовлю Agent Fiscal Autonomy Pack - аудит готовности цифровых сервисов к безопасному приему платежей от AI-агентов. Проект проверяет цену, лимиты бюджета, подтверждение оплаты, журнал действий, отзыв доступа и передачу результата без доступа к приватным ключам.
+
+## Публичные ссылки
+
+- Репозиторий: <https://github.com/egoriklok/agent-fiscal-autonomy-pack>
 - GitHub Pages home: <https://egoriklok.github.io/agent-fiscal-autonomy-pack/>
 - README: <https://github.com/egoriklok/agent-fiscal-autonomy-pack/blob/main/README.md>
-- Roadmap: <https://github.com/egoriklok/agent-fiscal-autonomy-pack/blob/main/ROADMAP.md>
-- One-page offer: <https://github.com/egoriklok/agent-fiscal-autonomy-pack/blob/main/docs/one-page-offer.md>
+- План развития: <https://github.com/egoriklok/agent-fiscal-autonomy-pack/blob/main/ROADMAP.md>
+- Одностраничное предложение: <https://github.com/egoriklok/agent-fiscal-autonomy-pack/blob/main/docs/one-page-offer.md>
 - Retention trigger map: <https://github.com/egoriklok/agent-fiscal-autonomy-pack/blob/main/docs/retention-trigger-map.md>
-- Merged PR #1: <https://github.com/egoriklok/agent-fiscal-autonomy-pack/pull/1>
+- Слитый PR #1: <https://github.com/egoriklok/agent-fiscal-autonomy-pack/pull/1>
+- Текущий PR #2: <https://github.com/egoriklok/agent-fiscal-autonomy-pack/pull/2>
 
-## Embed target
-
-После merge в `main` эта страница будет доступна как GitHub Pages URL:
+## Ссылка для встройки после merge
 
 ```text
 https://egoriklok.github.io/agent-fiscal-autonomy-pack/portfolio-r1-ru.html
 ```
 
-Рекомендуемый короткий anchor text для портфолио:
+Рекомендуемый короткий текст ссылки:
 
 ```text
-Agent Fiscal Autonomy Pack — proof-layer для AI agency economy
+Agent Fiscal Autonomy Pack - аудит готовности к платежам от AI-агентов
 ```

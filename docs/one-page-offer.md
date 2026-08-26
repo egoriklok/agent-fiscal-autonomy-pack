@@ -26,7 +26,7 @@ Within 72 hours after verified payment, you receive:
 9. one factual correction round within seven calendar days.
 
 See the [public sample audit](public-sample-audit.md) and its
-[JSON summary](../deliverables/public-sample-audit-summary.json).
+[JSON summary](https://github.com/egoriklok/agent-fiscal-autonomy-pack/blob/main/deliverables/public-sample-audit-summary.json).
 
 ## Fixed Scope
 

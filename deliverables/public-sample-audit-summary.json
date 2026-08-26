@@ -1,0 +1,45 @@
+{
+  "schema_version": "agent-fiscal-autonomy-audit-summary-v1",
+  "target_name": "Base USDC Wallet Balance Snapshot API",
+  "readiness_status": "Partial",
+  "authority_map": {
+    "owner": "Owner-controlled public seller identity and Cloudflare Worker",
+    "approval_source": "Exact x402 payment challenge before protected delivery; successful paid delivery was not exercised",
+    "surface": "Public Base wallet-balance API sold through a Payan external offer",
+    "limit_policy": "1,000 raw official Base USDC per request with a 300-second payment timeout; no cumulative buyer cap is public"
+  },
+  "gaps": [
+    {
+      "area": "pricing_payment",
+      "finding": "The public offer exposes priceCents=0, priceUsd=0.001, and amountRaw=1000 at the same time.",
+      "risk": "A catalog or buyer agent can interpret the offer as free if it relies on whole cents.",
+      "recommended_fix": "Treat the atomic token amount as authoritative and expose an exact decimal or micro-USDC field in every projection."
+    },
+    {
+      "area": "receipt_audit_trail",
+      "finding": "No public record links a paid attempt, Payan receipt, Base transfer, and delivered response for this offer.",
+      "risk": "The unpaid HTTP 402 contract can hide a settlement or relay fault.",
+      "recommended_fix": "Preserve one attributable third-party purchase with the acceptance reference, platform receipt, Base transfer, response hash, and cost ledger."
+    },
+    {
+      "area": "approval_limits",
+      "finding": "The service publishes a per-request price but no cumulative buyer budget cap.",
+      "risk": "An autonomous buyer can repeat valid requests beyond its intended total budget.",
+      "recommended_fix": "Require a client-side total cap and publish a recommended request cap and stop rule."
+    },
+    {
+      "area": "revocation",
+      "finding": "The public material does not document an exact seller-key rotation, revoke, or account-close route.",
+      "risk": "A compromised seller credential can remain usable until a platform operator intervenes.",
+      "recommended_fix": "Obtain and publish the official rotation or revoke procedure, or record the operator support path and response target."
+    },
+    {
+      "area": "secret_custody_boundary",
+      "finding": "The protected request accepts one public Base address and requests no credential, signer, or private wallet material.",
+      "risk": "No secret-custody defect was observed in the public request contract; private implementation and operator handling remain outside this sample.",
+      "recommended_fix": "Keep the no-secret request schema and exclude credential-bearing diagnostics from future public evidence."
+    }
+  ],
+  "next_safe_threshold": "Complete one buyer-authorized purchase under an exact total budget, then link the buyer acceptance, Payan receipt, successful official Base USDC transfer, protected response hash, post-baseline balance increase, and direct costs.",
+  "no_secret_boundary_confirmed": true
+}

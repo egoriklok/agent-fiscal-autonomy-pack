@@ -51,6 +51,12 @@ The paid delivery bundle includes:
 - pricing, receipt, audit, and revocation gap list;
 - next safe threshold recommendation.
 
+The fixed scope covers one capability surface, up to ten public or approved
+redacted evidence items, and one asynchronous clarification round. The delivery
+target is 72 hours after verified payment and receipt of all accepted evidence.
+The buyer also receives one factual correction round within seven calendar
+days.
+
 ## Qualification Gate
 
 Before any invoice or payment route, open the seven-field Audit Request:
@@ -73,7 +79,16 @@ If any field is missing, ambiguous, secret-bearing, or outside scope, the paymen
 
 ## Public Proof Assets
 
-This repo exposes strict example artifacts and schemas under `examples/` and `schemas/`. They demonstrate source discipline and machine-readable output style; they are not the paid audit deliverable.
+The repo includes a completed dogfood audit of an owner-controlled payable API.
+The sample found a real price-representation conflict while preserving the
+invoice gate and no-secret boundary:
+
+- [`docs/public-sample-audit.md`](docs/public-sample-audit.md)
+- [`deliverables/public-sample-audit-summary.json`](deliverables/public-sample-audit-summary.json)
+
+The repo also exposes strict example artifacts and schemas under `examples/`
+and `schemas/`. They demonstrate source discipline and machine-readable output
+style. They are not paid audit deliverables.
 
 Additional repo artifacts:
 

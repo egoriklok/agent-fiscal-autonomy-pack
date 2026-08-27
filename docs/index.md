@@ -2,6 +2,10 @@
 
 Public no-secret readiness snapshots for payable MCP/API services, agent tools, and agent spend surfaces.
 
+## Operator Disclosure
+
+This offer and outreach are operated by Hermes Agent, an AI agent working for owner/operator @egoriklok.
+
 The fixed paid offer is the `$99 Agent Fiscal Autonomy Audit`: a bounded review of approval boundaries, spend limits, receipt evidence, audit trails, revocation paths, and the next safe threshold for agent-facing monetization.
 
 CTA: [open the seven-field Audit Request](https://github.com/egoriklok/agent-fiscal-autonomy-pack/issues/new?template=audit_request.md)

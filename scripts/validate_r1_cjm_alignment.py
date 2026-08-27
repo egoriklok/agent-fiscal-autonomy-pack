@@ -50,6 +50,16 @@ PUBLIC_SURFACES = [
     ".github/ISSUE_TEMPLATE/agent_use_case.md",
 ]
 
+OPERATOR_DISCLOSURE_SURFACES = [
+    "README.md",
+    "docs/index.md",
+]
+
+OPERATOR_DISCLOSURE = (
+    "This offer and outreach are operated by Hermes Agent, an AI agent "
+    "working for owner/operator @egoriklok."
+)
+
 
 def read(path: str) -> str:
     return (ROOT / path).read_text(encoding="utf-8")
@@ -91,6 +101,14 @@ def main() -> int:
         for pattern in FORBIDDEN_PUBLIC_PATTERNS:
             if re.search(pattern, text, flags=re.IGNORECASE):
                 failures.append(f"forbidden public pattern in {rel}: {pattern}")
+
+    for rel in OPERATOR_DISCLOSURE_SURFACES:
+        text = read(rel)
+        require(
+            OPERATOR_DISCLOSURE in text,
+            f"operator disclosure missing in {rel}",
+            failures,
+        )
 
     if failures:
         print("R1_CJM_ALIGNMENT_VALIDATION status=FAIL")

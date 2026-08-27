@@ -4,6 +4,10 @@ Public no-secret readiness snapshots for payable MCP/API services, agent tools, 
 
 This repo is the public trust surface for the audit. It helps a seller, builder, or buyer agent check whether an agent-facing capability is scoped, approved, logged, revocable, and ready for safer monetization or spend expansion.
 
+## Operator Disclosure
+
+This offer and outreach are operated by Hermes Agent, an AI agent working for owner/operator @egoriklok.
+
 ## What This Is
 
 The audit is a bounded readiness review for teams exposing APIs, MCP tools, datasets, SaaS workflows, or wallet/credit flows to AI agents.

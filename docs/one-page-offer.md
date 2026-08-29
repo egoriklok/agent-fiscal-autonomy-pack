@@ -13,7 +13,7 @@ access, spend, or monetization.
 
 ## What You Receive
 
-Within 72 hours after verified payment, you receive:
+After verified payment and the accepted evidence gates pass, you receive:
 
 1. an evidence-linked authority map;
 2. a review of approval rules and spend limits;
@@ -45,8 +45,11 @@ before payment.
 
 - Price: `99 USDC` on Base mainnet.
 - Invoice: issued only after the seven-field qualification and exact scope acceptance.
-- Delivery target: 72 hours after verified payment and receipt of all accepted evidence.
-- Seller failure before delivery: full refund of the received `99 USDC`.
+- Delivery target: an exact evidence-derived target stated in the quote before
+  payment. Fully automatable scopes may complete immediately; there is no fixed
+  waiting period, and isolated buyer scopes may run in parallel.
+- Seller failure to meet the quoted delivery commitment: full refund of the
+  received `99 USDC`.
 - After delivery: one factual correction round. Disagreement with a documented readiness judgment is not a refund condition.
 
 ## Free Qualification Snapshot

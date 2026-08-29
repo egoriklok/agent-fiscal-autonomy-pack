@@ -56,10 +56,13 @@ The paid delivery bundle includes:
 - next safe threshold recommendation.
 
 The fixed scope covers one capability surface, up to ten public or approved
-redacted evidence items, and one asynchronous clarification round. The delivery
-target is 72 hours after verified payment and receipt of all accepted evidence.
-The buyer also receives one factual correction round within seven calendar
-days.
+redacted evidence items, and one asynchronous clarification round. The quote
+states an exact evidence-derived delivery target before payment. A fully
+automatable public or redacted scope may complete immediately after payment and
+evidence gates pass; there is no artificial waiting period. Buyer work is
+isolated, so multiple accepted scopes may progress in parallel without mixing
+evidence or settlement records. The buyer also receives one factual correction
+round within seven calendar days.
 
 ## Qualification Gate
 

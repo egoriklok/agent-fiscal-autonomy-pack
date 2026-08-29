@@ -54,7 +54,10 @@
       "human_readable_markdown",
       "machine_readable_json_summary"
     ],
-    "delivery_before_verified_payment": false
+    "delivery_before_verified_payment": false,
+    "sla_mode": "evidence_derived_exact_target_before_payment",
+    "fixed_wait_hours": null,
+    "parallel_buyer_isolation": true
   },
   "safety_constraints": {
     "no_buyer_contact_from_this_artifact": true,

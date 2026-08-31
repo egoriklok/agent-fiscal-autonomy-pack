@@ -1,5 +1,5 @@
 {
-  "schema_version": "base-usdc-invoice-v2",
+  "schema_version": "base-usdc-invoice-v3",
   "product_id": "agent-fiscal-autonomy-audit",
   "offer_id": "agent-fiscal-autonomy-audit-99-usdc-base",
   "version": "0.4.7-r1-cjm-alignment",
@@ -19,7 +19,10 @@
   "pay_to_address": "ISSUED_ONLY_AFTER_SCOPE_ACCEPTANCE",
   "expires_at": "",
   "qualified_scope_reference": "",
-  "delivery_sla_hours_after_verified_payment": 72,
+  "delivery_target": "SET_FROM_ACCEPTED_SCOPE_BEFORE_PAYMENT",
+  "delivery_target_mode": "evidence_derived_exact_target_before_payment",
+  "delivery_target_required_before_payment": true,
+  "fixed_delivery_wait_hours": null,
   "refund_policy": "case-by-case refund before delivery; no refund after delivered artifact acceptance unless separately agreed",
   "verification_path": "Buyer provides tx hash; seller verifies non-custodially on Base before delivery.",
   "used_tx_hashes_ledger": "commerce/used_tx_hashes.json",

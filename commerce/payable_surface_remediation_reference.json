@@ -1,0 +1,158 @@
+{
+  "schema_version": "payable-surface-remediation-reference-v1",
+  "artifact_role": "remediation_reference_only",
+  "third_party_conformance": "unverified",
+  "not_a_claim": "This reference does not claim that Scramble or any other reviewed provider implements these controls. Provider conformance requires provider-owned evidence that passes every acceptance check.",
+  "applies_to": "Recurring agent payments for one payable API, MCP, tool, data, or service capability.",
+  "required_provider_fields": [
+    "limit_policy.policy_id",
+    "limit_policy.subject_id",
+    "limit_policy.asset",
+    "limit_policy.asset_decimals",
+    "limit_policy.amount_limit_minor",
+    "limit_policy.window_type",
+    "limit_policy.window_seconds",
+    "limit_policy.window_started_at",
+    "limit_policy.window_ends_at",
+    "limit_policy.usage_before_minor",
+    "limit_policy.usage_after_minor",
+    "idempotency.idempotency_key",
+    "idempotency.key_scope",
+    "idempotency.request_hash",
+    "idempotency.retention_until",
+    "receipt.receipt_id",
+    "receipt.intent_id",
+    "receipt.idempotency_key",
+    "receipt.payment_reference",
+    "receipt.tx_hash",
+    "receipt.amount_minor",
+    "receipt.asset",
+    "receipt.created_at",
+    "finality.chain_id",
+    "finality.status",
+    "finality.mode",
+    "finality.confirmations_observed",
+    "finality.confirmations_required",
+    "finality.block_number",
+    "finality.block_hash",
+    "finality.checked_at",
+    "reorg.status",
+    "reorg.detected_at",
+    "reorg.orphaned_block_hash",
+    "reorg.replacement_tx_hash",
+    "reorg.reconciliation_id",
+    "reorg.retry_policy"
+  ],
+  "field_rules": {
+    "amounts": "Use integer minor units and declare the asset and its decimals in the limit policy.",
+    "periodic_limit": "window_type is fixed or rolling. The provider declares the exact duration, boundaries and usage before and after each request.",
+    "idempotency": "The key scope must include the payer or agent subject and capability. The same key and request hash is a replay; the same key with a different request hash is a conflict.",
+    "receipt_identity": "receipt_id is immutable for one accepted intent and remains stable in every replay and status read.",
+    "finality": "status is pending until the declared confirmation_depth or rpc_finalized rule is satisfied on the canonical chain.",
+    "reorg": "An orphaned pre-finality observation invalidates the prior settlement proof, blocks fulfillment and revenue recognition, and never authorizes an automatic second charge."
+  },
+  "acceptance_checks": [
+    {
+      "check_id": "CAP-001",
+      "control": "periodic_limit",
+      "pass_condition": "Accepted charges keep usage_after_minor at or below amount_limit_minor in the declared window. The first over-limit request is rejected without a charge or settlement and returns the same window end as retry_after.",
+      "required_evidence": [
+        "limit_policy.policy_id",
+        "limit_policy.subject_id",
+        "limit_policy.asset",
+        "limit_policy.asset_decimals",
+        "limit_policy.amount_limit_minor",
+        "limit_policy.window_type",
+        "limit_policy.window_seconds",
+        "limit_policy.window_started_at",
+        "limit_policy.window_ends_at",
+        "limit_policy.usage_before_minor",
+        "limit_policy.usage_after_minor",
+        "rejection.status",
+        "rejection.retry_after",
+        "settlement_count"
+      ]
+    },
+    {
+      "check_id": "IDEM-001",
+      "control": "exact_replay",
+      "pass_condition": "Repeating the same idempotency_key and request_hash returns the original receipt_id, payment_reference and tx_hash, with exactly one settlement.",
+      "required_evidence": [
+        "idempotency.idempotency_key",
+        "idempotency.request_hash",
+        "idempotency.retention_until",
+        "receipt.receipt_id",
+        "receipt.payment_reference",
+        "receipt.tx_hash",
+        "settlement_count"
+      ]
+    },
+    {
+      "check_id": "IDEM-002",
+      "control": "idempotency_conflict",
+      "pass_condition": "Reusing an idempotency_key with a different request_hash returns idempotency_conflict and creates no charge, receipt or settlement.",
+      "required_evidence": [
+        "idempotency.idempotency_key",
+        "original_request_hash",
+        "conflicting_request_hash",
+        "response.status",
+        "response.error_code",
+        "settlement_count"
+      ]
+    },
+    {
+      "check_id": "RECEIPT-001",
+      "control": "stable_receipt_identity",
+      "pass_condition": "The initial accepted response, every replay, and every status read return one unchanged receipt_id for the intent.",
+      "required_evidence": [
+        "receipt.intent_id",
+        "receipt.receipt_id",
+        "receipt.idempotency_key",
+        "receipt.payment_reference",
+        "initial_response_hash",
+        "status_read_hashes"
+      ]
+    },
+    {
+      "check_id": "FINALITY-001",
+      "control": "declared_finality",
+      "pass_condition": "The receipt remains pending before the declared finality rule is met and becomes finalized only when its transaction and block identity are still canonical and the rule is satisfied.",
+      "required_evidence": [
+        "receipt.receipt_id",
+        "receipt.payment_reference",
+        "receipt.tx_hash",
+        "finality.chain_id",
+        "finality.mode",
+        "finality.confirmations_observed",
+        "finality.confirmations_required",
+        "finality.block_number",
+        "finality.block_hash",
+        "finality.status",
+        "finality.checked_at"
+      ]
+    },
+    {
+      "check_id": "REORG-001",
+      "control": "pre_finality_reorg",
+      "pass_condition": "If the observed block is orphaned before finality, the receipt moves to reorg_detected or reconciliation_required, prior settlement proof cannot unlock fulfillment or revenue, no automatic second charge occurs, and any replacement transaction is linked by reconciliation_id.",
+      "required_evidence": [
+        "receipt.receipt_id",
+        "receipt.payment_reference",
+        "receipt.tx_hash",
+        "finality.chain_id",
+        "finality.block_hash",
+        "reorg.status",
+        "reorg.detected_at",
+        "reorg.orphaned_block_hash",
+        "reorg.replacement_tx_hash",
+        "reorg.reconciliation_id",
+        "reorg.retry_policy",
+        "fulfillment_allowed",
+        "revenue_recognition_allowed",
+        "settlement_count"
+      ]
+    }
+  ],
+  "test_vectors": "examples/payable_surface_remediation_vectors_v1.json",
+  "publication_rule": "Publish provider conformance only after all six checks pass against provider-owned test or production evidence. A free snapshot may cite this artifact only as a remediation reference."
+}

@@ -32,7 +32,7 @@ The format is intentionally small and verifiable:
 - a gap list: missing price, missing receipt, missing audit trail, missing revocation path, or unclear delivery;
 - the next safe action.
 
-The paid version is packaged as a fixed audit for `99 USDC/USDT`, but only after the work scope is accepted. Before scope acceptance, the invoice and payment path stay closed.
+The paid version is packaged as a fixed audit for `99 USDC on Base`, but only after the work scope is accepted. Before scope acceptance, the invoice and payment path stay closed.
 
 ## How The R1 Flow Works
 

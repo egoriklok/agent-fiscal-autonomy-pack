@@ -41,6 +41,17 @@ The free public snapshot is intentionally small:
 
 The snapshot is not an invoice, not a payment request, and not a delivery artifact.
 
+## Payable-Surface Remediation Reference
+
+The machine-readable
+[`payable_surface_remediation_reference.json`](commerce/payable_surface_remediation_reference.json)
+and its
+[`test vectors`](examples/payable_surface_remediation_vectors_v1.json) define the
+minimum public evidence for a periodic spend limit, duplicate-safe idempotency,
+a stable receipt ID, declared finality, and pre-finality reorg reconciliation.
+They are a remediation reference only. They do not claim that Scramble or any
+other reviewed provider implements or passes these controls.
+
 ## Paid Offer
 
 The paid entry offer is a fixed-scope `$99 Agent Fiscal Autonomy Audit`.

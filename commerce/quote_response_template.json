@@ -1,5 +1,5 @@
 {
-  "schema_version": "quote-response-v2",
+  "schema_version": "quote-response-v3",
   "route": "/quote",
   "quote_id": "QUOTE-AFA-AUDIT-YYYYMMDDHHMMSS-BUYER",
   "status": "quote_ready_after_qualification",
@@ -13,7 +13,10 @@
   "token_contract": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
   "pay_to_address": "ISSUED_ONLY_AFTER_SCOPE_ACCEPTANCE",
   "expires_in_hours": 72,
-  "delivery_sla_hours_after_verified_payment": 72,
+  "delivery_target": "SET_FROM_ACCEPTED_SCOPE_BEFORE_PAYMENT",
+  "delivery_target_mode": "evidence_derived_exact_target_before_payment",
+  "delivery_target_required_before_payment": true,
+  "fixed_delivery_wait_hours": null,
   "refund_policy": "case-by-case refund before delivery; no refund after delivered artifact acceptance unless separately agreed",
   "qualification_required_before_invoice": true,
   "scope_acceptance_required_before_payment_route": true,

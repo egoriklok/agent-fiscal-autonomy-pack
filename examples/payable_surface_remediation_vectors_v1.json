@@ -1,0 +1,151 @@
+{
+  "schema_version": "payable-surface-remediation-vectors-v1",
+  "reference_contract": "commerce/payable_surface_remediation_reference.json",
+  "third_party_conformance": "unverified",
+  "vectors": [
+    {
+      "vector_id": "CAP-001",
+      "given": {
+        "asset": "USDC",
+        "asset_decimals": 6,
+        "subject_id": "agent-demo-1",
+        "amount_limit_minor": 200000,
+        "window_type": "fixed",
+        "window_seconds": 86400,
+        "window_started_at": "2030-01-01T00:00:00Z",
+        "window_ends_at": "2030-01-02T00:00:00Z"
+      },
+      "when": [
+        {"intent_id": "cap-a", "amount_minor": 100000},
+        {"intent_id": "cap-b", "amount_minor": 100000},
+        {"intent_id": "cap-c", "amount_minor": 100000}
+      ],
+      "expect": {
+        "usage_after_each_request_minor": [100000, 200000, 200000],
+        "statuses": ["accepted", "accepted", "limit_exceeded"],
+        "settlement_count": 2,
+        "third_request_charged": false,
+        "retry_after": "2030-01-02T00:00:00Z"
+      }
+    },
+    {
+      "vector_id": "IDEM-001",
+      "given": {
+        "idempotency_key": "idem-demo-001",
+        "request_hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+        "retention_until": "2030-01-08T00:00:00Z"
+      },
+      "when": ["submit", "repeat_same_key_and_hash"],
+      "expect": {
+        "receipt_ids": ["rcpt-demo-001", "rcpt-demo-001"],
+        "payment_references": ["pay-demo-001", "pay-demo-001"],
+        "tx_hashes": [
+          "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        ],
+        "settlement_count": 1
+      }
+    },
+    {
+      "vector_id": "IDEM-002",
+      "given": {
+        "idempotency_key": "idem-demo-002",
+        "original_request_hash": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+        "conflicting_request_hash": "sha256:3333333333333333333333333333333333333333333333333333333333333333"
+      },
+      "when": ["submit_original", "submit_same_key_with_conflicting_hash"],
+      "expect": {
+        "second_http_status": 409,
+        "second_error_code": "idempotency_conflict",
+        "second_receipt_id": null,
+        "second_request_charged": false,
+        "settlement_count": 1
+      }
+    },
+    {
+      "vector_id": "RECEIPT-001",
+      "given": {
+        "intent_id": "intent-demo-001",
+        "idempotency_key": "idem-demo-003"
+      },
+      "when": ["accepted_response", "exact_replay", "status_read_1", "status_read_2"],
+      "expect": {
+        "receipt_ids": [
+          "rcpt-demo-003",
+          "rcpt-demo-003",
+          "rcpt-demo-003",
+          "rcpt-demo-003"
+        ],
+        "unique_receipt_id_count": 1
+      }
+    },
+    {
+      "vector_id": "FINALITY-001",
+      "given": {
+        "chain_id": 8453,
+        "receipt_id": "rcpt-demo-finality-001",
+        "payment_reference": "pay-demo-finality-001",
+        "tx_hash": "0xdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "mode": "confirmation_depth",
+        "confirmations_required": 3,
+        "block_number": 100,
+        "block_hash": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "when": [
+        {"confirmations_observed": 2, "canonical_block_hash_matches": true, "canonical_transaction_inclusion_matches": true},
+        {"confirmations_observed": 3, "canonical_block_hash_matches": true, "canonical_transaction_inclusion_matches": true}
+      ],
+      "expect": {
+        "receipt_ids": ["rcpt-demo-finality-001", "rcpt-demo-finality-001"],
+        "payment_references": ["pay-demo-finality-001", "pay-demo-finality-001"],
+        "tx_hashes": [
+          "0xdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+          "0xdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+        ],
+        "chain_ids": [8453, 8453],
+        "block_hashes": [
+          "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        ],
+        "statuses": ["pending", "finalized"],
+        "fulfillment_allowed": [false, true],
+        "canonical_transaction_inclusion": [true, true]
+      }
+    },
+    {
+      "vector_id": "REORG-001",
+      "given": {
+        "chain_id": 8453,
+        "receipt_id": "rcpt-demo-reorg-001",
+        "payment_reference": "pay-demo-reorg-001",
+        "tx_hash": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "finality_status": "pending",
+        "observed_block_number": 101,
+        "observed_block_hash": "0xcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+      },
+      "when": [
+        {
+          "event": "canonical_readback_no_longer_contains_observed_block_hash",
+          "chain_id": 8453,
+          "receipt_id": "rcpt-demo-reorg-001",
+          "tx_hash": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+          "orphaned_block_hash": "0xcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+        }
+      ],
+      "expect": {
+        "chain_id": 8453,
+        "receipt_id": "rcpt-demo-reorg-001",
+        "payment_reference": "pay-demo-reorg-001",
+        "tx_hash": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "orphaned_block_hash": "0xcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "reorg_status": "reorg_detected",
+        "fulfillment_allowed": false,
+        "revenue_recognition_allowed": false,
+        "automatic_second_charge": false,
+        "replacement_tx_hash": null,
+        "reconciliation_id": "recon-demo-reorg-001",
+        "reconciliation_id_required": true
+      }
+    }
+  ]
+}

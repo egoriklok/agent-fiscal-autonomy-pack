@@ -1,5 +1,5 @@
 {
-  "schema_version": "payment-mandate-v1",
+  "schema_version": "payment-mandate-v2",
   "status": "draft_not_payable",
   "mandate_id": "MANDATE-AFA-AUDIT-YYYYMMDD-001",
   "quote_id": "QUOTE-AFA-AUDIT-YYYYMMDDHHMMSS-BUYER",
@@ -13,7 +13,10 @@
   "payee": "ISSUED_ONLY_AFTER_SCOPE_ACCEPTANCE",
   "expires_at": "",
   "qualified_scope_reference": "",
-  "delivery_sla_hours_after_verified_payment": 72,
+  "delivery_target": "SET_FROM_ACCEPTED_SCOPE_BEFORE_PAYMENT",
+  "delivery_target_mode": "evidence_derived_exact_target_before_payment",
+  "delivery_target_required_before_payment": true,
+  "fixed_delivery_wait_hours": null,
   "refund_policy": "case-by-case refund before delivery; no refund after delivered artifact acceptance unless separately agreed",
   "verification_path": "Non-custodial Base transaction hash verification before delivery.",
   "required_preconditions": [
@@ -21,6 +24,7 @@
     "seven_field_qualification_complete",
     "no_secret_inputs_requested_or_received",
     "fixed_scope_confirmed",
+    "exact_delivery_target_set_from_accepted_scope",
     "payment_route_opened_by_seller"
   ],
   "blocked_if": [
